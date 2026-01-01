@@ -3,9 +3,11 @@
 import { Button } from "./ui/button"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
+import { useRouter } from "next/navigation";
 
 export function Hero() {
-  const { language } = useApp()
+  const { language } = useApp();
+  const router = useRouter();
   const t = translations[language].hero
 
   return (
@@ -32,10 +34,10 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="rounded-full px-8 h-12">
+          <Button size="lg" className="rounded-full px-8 h-12 cursor-pointer" onClick={() => router.push('/contact')}>
             {t.cta}
           </Button>
-          <Button size="lg" variant="ghost" className="rounded-full px-8 h-12">
+          <Button size="lg" variant="ghost" className="rounded-full px-8 h-12 cursor-pointer" onClick={() => router.push('/about')}>
             {t.learnMore}
           </Button>
         </div>

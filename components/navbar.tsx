@@ -53,15 +53,16 @@ export function Navbar() {
         <div className="flex items-center gap-10">
           <Link
             href="/"
-            className="text-2xl font-bold tracking-tighter text-primary"
+            className="text-xl md:text-2xl font-bold tracking-tighter text-primary"
           >
-            SOLIQ<span className="text-foreground/40 font-light">.UZ</span>
+            TaxOFF <span className="text-foreground/40 font-light">Partners</span>
           </Link>
 
           <div className="hidden lg:flex items-center gap-8">
             <NavLink href="/" label={t.home} />
             <NavLink href="/about" label={t.about} />
             <NavLink href="/news" label={t.news} />
+            <NavLink href="/blogs" label={t.blogs} />
             <NavLink href="/reviews" label={t.reviews} />
             <NavLink href="/contact" label={t.contact} />
           </div>
@@ -82,8 +83,8 @@ export function Navbar() {
                   key={lang.code}
                   onClick={() => setLanguage(lang.code as any)}
                   className={`rounded-lg cursor-pointer ${language === lang.code
-                      ? "bg-primary/10 text-primary font-bold"
-                      : ""
+                    ? "bg-primary/10 text-primary font-bold"
+                    : ""
                     }`}
                 >
                   <span className="mr-2">{lang.flag}</span>
@@ -106,11 +107,11 @@ export function Navbar() {
           <div className="hidden sm:flex h-8 w-px bg-border mx-2" />
 
           {/* CTA */}
-          <Link href="/contact" className="hidden sm:block">
+          {/* <Link href="/contact" className="hidden sm:block">
             <Button className="rounded-full px-8 bg-primary hover:bg-primary/90 text-white font-bold text-sm uppercase tracking-widest shadow-lg shadow-primary/20">
               {t.getStarted}
             </Button>
-          </Link>
+          </Link> */}
 
           {/* Mobile menu */}
           <Sheet>
@@ -126,8 +127,8 @@ export function Navbar() {
 
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <SheetHeader>
-                <SheetTitle className="text-2xl font-bold tracking-tighter text-primary">
-                  SOLIQ<span className="text-foreground/40 font-light">.UZ</span>
+                <SheetTitle className="text-xl md:text-2xl font-bold tracking-tighter text-primary">
+                  TaxOFF<span className="text-foreground/40 font-light px-1">Partners</span>
                 </SheetTitle>
               </SheetHeader>
 
@@ -135,16 +136,17 @@ export function Navbar() {
                 <MobileLink href="/" label={t.home} />
                 <MobileLink href="/about" label={t.about} />
                 <MobileLink href="/news" label={t.news} />
+                <MobileLink href="/blogs" label={t.blogs} />
                 <MobileLink href="/reviews" label={t.reviews} />
                 <MobileLink href="/contact" label={t.contact} />
 
                 <div className="h-px bg-border my-2" />
 
-                <Link href="/contact">
-                  <Button className="w-full rounded-full py-6 bg-primary hover:bg-primary/90 text-white font-bold text-sm uppercase tracking-widest">
-                    {t.getStarted}
+                {/* <Link href="/contact" className="flex items-center justify-center">
+                  <Button className="w-auto rounded-full py-6 bg-primary hover:bg-primary/90 text-white font-bold text-sm uppercase tracking-widest">
+                    Bog'lanish
                   </Button>
-                </Link>
+                </Link> */}
               </div>
             </SheetContent>
           </Sheet>

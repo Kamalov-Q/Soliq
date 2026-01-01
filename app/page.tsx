@@ -46,7 +46,6 @@ export default function SoliqPage() {
 
   return (
     <main className="min-h-screen pt-[72px]">
-      {/* ↑ reserves space for fixed navbar */}
       <Navbar />
       <Hero />
 

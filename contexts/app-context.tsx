@@ -19,7 +19,6 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("uz")
   const [theme, setTheme] = useState<Theme>("light")
 
-  // Initialize theme from system preference or localStorage if available
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as Theme | null
     const savedLang = localStorage.getItem("lang") as Language | null

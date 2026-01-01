@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Send, Mail, Phone, MapPin } from "lucide-react"
 
 export function Footer() {
   const { language } = useApp()
@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-border/50">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b from-muted/30 to-transparent pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Main Footer Content */}
@@ -20,7 +20,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="text-3xl font-bold tracking-tighter text-primary inline-block">
-              SOLIQ<span className="text-foreground/40 font-light">.UZ</span>
+              TaxOFF<span className="text-foreground/40 font-light ml-1">Partners</span>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">{t.footer.description}</p>
             <div className="flex gap-3">
@@ -43,10 +43,10 @@ export function Footer() {
                 <Linkedin size={18} />
               </a>
               <a
-                href="#"
+                href="https://t.me/taxoff_group"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary hover:text-white flex items-center justify-center transition-all"
               >
-                <Twitter size={18} />
+                <Send size={18} />
               </a>
             </div>
           </div>
@@ -122,7 +122,8 @@ export function Footer() {
               </li>
               <li className="flex gap-3 items-center text-sm text-muted-foreground">
                 <Phone size={16} className="shrink-0 text-primary" />
-                <span>{t.contact.phoneValue}</span>
+                {/* <span>{t.contact.phoneValue}</span> */}
+                <span><Link href={`tel:998947540070`}>+99894 754-00-70</Link></span>
               </li>
               <li className="flex gap-3 items-center text-sm text-muted-foreground">
                 <Mail size={16} className="shrink-0 text-primary" />
@@ -134,7 +135,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-border/50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-muted-foreground">
-          <div>© 2025 SOLIQ.UZ. {t.footer.rights}</div>
+          <div>© 2025 TaxOFF Partners {t.footer.rights}</div>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary transition-colors uppercase tracking-widest font-bold">
               Privacy Policy

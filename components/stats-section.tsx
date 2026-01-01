@@ -8,25 +8,25 @@ export function StatsSection({ t }: { t: any }) {
     const stats = [
         {
             icon: <Users size={42} />,
-            value: 500,
+            value: 300,
             suffix: "+",
             label: t.about.clients,
         },
         {
             icon: <TrendingUp size={42} />,
-            value: 10,
+            value: 19,
             suffix: "+",
             label: t.about.experience,
         },
         {
             icon: <Award size={42} />,
-            value: 1000,
+            value: 200,
             suffix: "+",
             label: t.about.projects,
         },
         {
             icon: <Briefcase size={42} />,
-            value: 25,
+            value: 10,
             suffix: "+",
             label: t.about.experts,
         },
