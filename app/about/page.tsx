@@ -39,10 +39,10 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-2 gap-10">
                 {[
-                  { label: t.experience, value: "10+" },
-                  { label: t.clients, value: "500+" },
-                  { label: t.experts, value: "50+" },
-                  { label: t.projects, value: "1.2k" },
+                  { label: t.experience, value: "19+" },
+                  { label: t.clients, value: "300+" },
+                  { label: t.experts, value: "10+" },
+                  { label: t.projects, value: "200" },
                 ].map((stat, i) => (
                   <div key={i} className="group">
                     <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform origin-left">
@@ -106,7 +106,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">{t.values}</h2>
-            <h3 className="text-3xl md:text-5xl font-bold tracking-tight">Our Core Principles</h3>
+            <h3 className="text-3xl md:text-5xl font-bold tracking-tight">{t.sub_desc}</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="p-10 rounded-[2rem] bg-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-2xl hover:shadow-primary/5 text-center group"
+                className="p-10 rounded-4xl bg-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-2xl hover:shadow-primary/5 text-center group"
               >
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                   {value.icon}

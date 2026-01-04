@@ -31,7 +31,7 @@ export function Footer() {
                 <Facebook size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/soliq_taxoff_partners/"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary hover:text-white flex items-center justify-center transition-all"
               >
                 <Instagram size={18} />
@@ -70,6 +70,12 @@ export function Footer() {
                   {t.nav.news}
                 </Link>
               </li>
+              <li>
+                <Link href="/blogs" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {t.nav.blogs}
+                </Link>
+              </li>
+
               <li>
                 <Link href="/reviews" className="text-muted-foreground hover:text-primary transition-colors text-sm">
                   {t.nav.reviews}

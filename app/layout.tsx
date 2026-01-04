@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Soliq.uz - Professional Tax Services",
   description: "Leading tax consulting and accounting services in Uzbekistan",
   generator: "v0.app",
-  icons: {
+  icons: { 
     icon: [
       {
         url: "/icon-light-32x32.png",

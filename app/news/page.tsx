@@ -91,9 +91,9 @@ export default function NewsPage() {
             initial={{ opacity: 0, scale: 0.98 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-[2rem] overflow-hidden bg-card border border-border/50 shadow-2xl shadow-primary/5"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-4xl overflow-hidden bg-card border border-border/50 shadow-2xl shadow-primary/5"
           >
-            <div className="relative aspect-[16/10] lg:aspect-auto">
+            <div className="relative aspect-16/10 lg:aspect-auto">
               <img
                 src="/uzbekistan-business-news-.jpg?height=800&width=1200&query=uzbekistan business news feature"
                 alt={featured.title}
@@ -146,13 +146,13 @@ export default function NewsPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
               >
                 <Card className="h-full border-none bg-transparent group cursor-pointer">
-                  <div className="aspect-[16/10] relative rounded-2xl overflow-hidden mb-6 shadow-lg shadow-primary/5">
+                  <div className="aspect-16/10 relative rounded-2xl overflow-hidden mb-6 shadow-lg shadow-primary/5">
                     <img
                       src={`/uzbekistan-business-news-.jpg?height=400&width=600&query=uzbek business ${i + 1}`}
                       alt={article.title}
                       className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
                   <CardHeader className="p-0">
                     <div className="flex items-center gap-3 mb-3">
@@ -187,7 +187,7 @@ export default function NewsPage() {
           <div className="flex items-end justify-between mb-12">
             <div>
               <h2 className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">{t.suggestedTitle}</h2>
-              <h3 className="text-3xl md:text-4xl font-bold tracking-tight">Handpicked For You</h3>
+              <h3 className="text-3xl md:text-4xl font-bold tracking-tight">{t.chosen_news}</h3>
             </div>
             <Link href="/news" className="hidden md:block">
               <Button

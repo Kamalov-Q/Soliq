@@ -90,7 +90,7 @@ export function ContactMap() {
       {/* Map */}
       <div ref={mapRef} className="absolute inset-0 w-full h-full" />
 
-      {/* Loading */}
+      {/* Loading */} 
       {!isMapReady && (
         <div className="absolute inset-0 z-10 flex items-center justify-center bg-muted/80 backdrop-blur-sm">
           <div className="flex flex-col items-center gap-4">
