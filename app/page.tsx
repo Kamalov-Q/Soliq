@@ -18,6 +18,7 @@ import {
 } from "lucide-react"
 import { StatsSection } from "@/components/stats-section"
 import NewsComponent from "@/components/news"
+import ServicesComponent from "@/components/serv-comp"
 
 export default function SoliqPage() {
   const { language } = useApp()
@@ -95,35 +96,11 @@ export default function SoliqPage() {
         </div>
       </section>
 
-      {/* PARTNERS */}
-      {/* <section className="py-24 px-6 bg-muted/20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-primary font-bold uppercase text-xs md:text-5xl text-center mb-12">
-            {t.partners.title}
-          </h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {partners.map((p, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="flex justify-center"
-              >
-                <img
-                  src={p.logo}
-                  alt={p.name}
-                  className="h-20 object-contain hover:scale-105 transition rounded-full cursor-pointer"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       <NewsComponent />
+
+      <ServicesComponent />
+
       <Footer />
     </main>
   )

@@ -6,9 +6,7 @@ import { Footer } from "@/components/footer"
 import { useApp } from "@/contexts/app-context"
 import { motion, AnimatePresence } from "framer-motion"
 import { PlayCircle } from "lucide-react"
-import { useRouter } from "next/navigation"
 import { BLOGS } from "@/data/blogs"
-import { NEWS } from "@/data/news"
 import NewsComponent from "@/components/news"
 
 const MOBILE_LIMIT = 3

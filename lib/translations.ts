@@ -20,9 +20,15 @@ export const translations = {
     },
     services: {
       title: "Bizning xizmatlarimiz",
+      serv1: "Soliq maslahati",
+      serv2: "Buxgalteriya xizmatlari",
+      serv3: "Soliq organlari",
+      serv4: "Soliq auditi va Likvidatsiya",
+      serv5: "Bankrotlik",
       subtitle: "Keng qamrovli soliq yechimlar",
       taxConsulting: "Soliq konsaltingi",
-      taxConsultingDesc: "Professional soliq rejalashtirish va qonunga muvofiqlik bo'yicha maslahat",
+      taxConsultingDesc:
+        "Professional soliq rejalashtirish va qonunga muvofiqlik bo'yicha maslahat",
       accounting: "Buxgalteriya xizmatlari",
       accountingDesc: "To'liq buxgalteriya hisobi va moliyaviy hisobotlar",
       legal: "Yuridik yordam",
@@ -64,27 +70,33 @@ export const translations = {
       chosen_news: "Siz uchun tanlangan",
       allNews: "Barcha yangiliklar",
       article1Title: "2024-yilda soliq qonunchiligidagi o'zgarishlar",
-      article1Desc: "Yangi soliq davrida biznesga ta'sir qiluvchi asosiy o'zgarishlar haqida bilib oling",
+      article1Desc:
+        "Yangi soliq davrida biznesga ta'sir qiluvchi asosiy o'zgarishlar haqida bilib oling",
       article1Content:
         "O'zbekiston Respublikasi Soliq kodeksiga kiritilgan o'zgarishlar 2024-yil 1-yanvardan kuchga kirdi. Ushbu o'zgarishlar kichik va o'rta biznes uchun soliq yukini kamaytirish, raqamli iqtisodiyotni rivojlantirish va xalqaro standartlarga muvofiqlikni ta'minlashga qaratilgan.",
       article2Title: "Kichik biznes uchun soliq imtiyozlari",
-      article2Desc: "Startaplar va kichik korxonalar uchun mavjud soliq imtiyozlarini kashf eting",
+      article2Desc:
+        "Startaplar va kichik korxonalar uchun mavjud soliq imtiyozlarini kashf eting",
       article2Content:
         "Kichik biznes subyektlari uchun maxsus soliq rejimlari joriy etilgan. Yillik daromadi 1 milliard so'mgacha bo'lgan tadbirkorlar soddalashtirilgan soliq tizimidan foydalanish huquqiga ega. Bu rejim moliyaviy hisobotlarni soddalashtiradi va soliq yukini sezilarli darajada kamaytiradi.",
       article3Title: "Raqamli soliq deklaratsiyasi",
-      article3Desc: "Onlayn soliq deklaratsiyasi tizimining afzalliklari va qanday foydalanish",
+      article3Desc:
+        "Onlayn soliq deklaratsiyasi tizimining afzalliklari va qanday foydalanish",
       article3Content:
         "Soliq qo'mitasi tomonidan ishlab chiqilgan yangi raqamli platforma soliq to'lovchilariga onlayn rejimda deklaratsiya topshirish, to'lovlarni amalga oshirish va soliq organlari bilan muloqot qilish imkonini beradi. Tizim 24/7 ishlaydi va mobil ilovalar orqali ham mavjud.",
       article4Title: "Eksport operatsiyalari uchun QQS qaytarish",
-      article4Desc: "Eksport qiluvchi kompaniyalar uchun QQS qaytarish mexanizmi yangilandi",
+      article4Desc:
+        "Eksport qiluvchi kompaniyalar uchun QQS qaytarish mexanizmi yangilandi",
       article4Content:
         "Eksportchilar uchun QQS qaytarish jarayoni soddalashtirildi va tezlashtirildi. Endi elektron hujjatlar asosida 30 kun ichida qaytarim amalga oshiriladi.",
       article5Title: "IT kompaniyalari uchun yangi imtiyozlar",
-      article5Desc: "Dasturiy ta'minot ishlab chiqaruvchi kompaniyalar uchun maxsus soliq rejimlari",
+      article5Desc:
+        "Dasturiy ta'minot ishlab chiqaruvchi kompaniyalar uchun maxsus soliq rejimlari",
       article5Content:
         "IT sohasidagi kompaniyalar uchun daromad solig'i stavkasi 5% ga tushirildi. Bundan tashqari, xodimlarning ish haqi fondidan olinadigan ijtimoiy soliq ham imtiyozli stavkalar bilan qo'llaniladi.",
       article6Title: "Investitsiya loyihalari uchun soliq siyosati",
-      article6Desc: "Yirik investitsiya loyihalarini amalga oshiruvchi kompaniyalar uchun imtiyozlar",
+      article6Desc:
+        "Yirik investitsiya loyihalarini amalga oshiruvchi kompaniyalar uchun imtiyozlar",
       article6Content:
         "5 million dollar va undan yuqori miqdorda investitsiya kirituvchi kompaniyalar 5 yillik soliq ta'tilidan foydalanish imkoniyatiga ega. Bu choralar investitsiya muhitini yaxshilashga qaratilgan.",
     },
@@ -125,7 +137,8 @@ export const translations = {
       message: "Xabaringiz",
       send: "Jo'natish",
       address: "Manzil",
-      addressValue: "Chilonzor tumani, 17-kvartal, 39-uy, 18-xonadon, Toshkent, O'zbekiston 100131",
+      addressValue:
+        "Chilonzor tumani, 17-kvartal, 39-uy, 18-xonadon, Toshkent, O'zbekiston 100131",
       addressShort: "Chilonzor 17kvartal 39dom 18kvartira",
       city: "Toshkent, Uzbekistan 100131",
       phone2: "Telefon",
@@ -190,11 +203,13 @@ export const translations = {
       title: "Nima uchun bizni tanlash kerak",
       subtitle: "Bizning raqobatdagi ustunliklarimiz",
       reason1Title: "Tajribali mutaxassislar",
-      reason1Desc: "10 yildan ortiq tajribaga ega professional soliq maslahatchilari jamoasi",
+      reason1Desc:
+        "10 yildan ortiq tajribaga ega professional soliq maslahatchilari jamoasi",
       reason2Title: "24/7 qo'llab-quvvatlash",
       reason2Desc: "Har qanday vaqtda savol va muammolaringizga yordam beramiz",
       reason3Title: "Raqamli yechimlar",
-      reason3Desc: "Zamonaviy texnologiyalar va onlayn platformalar orqali xizmat",
+      reason3Desc:
+        "Zamonaviy texnologiyalar va onlayn platformalar orqali xizmat",
       reason4Title: "Shaffoflik",
       reason4Desc: "Barcha jarayonlar to'liq shaffof va tushunarli",
       reason5Title: "Individual yondashuv",
@@ -204,7 +219,8 @@ export const translations = {
     },
     partners: {
       title: "Bizning hamkorlarimiz",
-      subtitle: "Biz O'zbekistonning yetakchi kompaniyalari bilan hamkorlik qilamiz",
+      subtitle:
+        "Biz O'zbekistonning yetakchi kompaniyalari bilan hamkorlik qilamiz",
     },
   },
   ru: {
@@ -228,9 +244,15 @@ export const translations = {
     },
     services: {
       title: "Наши услуги",
+      serv1: "Soliq maslahati",
+      serv2: "Buxgalteriya xizmatlari",
+      serv3: "Soliq organlari",
+      serv4: "Soliq auditi va Likvidatsiya",
+      serv5: "Bankrotlik",
       subtitle: "Комплексные налоговые решения",
       taxConsulting: "Налоговый консалтинг",
-      taxConsultingDesc: "Профессиональное налоговое планирование и соответствие законодательству",
+      taxConsultingDesc:
+        "Профессиональное налоговое планирование и соответствие законодательству",
       accounting: "Бухгалтерские услуги",
       accountingDesc: "Полный бухгалтерский учет и финансовая отчетность",
       legal: "Юридическая помощь",
@@ -272,27 +294,33 @@ export const translations = {
       chosen_news: "Подобрано специально для вас",
       allNews: "Все новости",
       article1Title: "Изменения в налоговом законодательстве 2024",
-      article1Desc: "Узнайте о ключевых изменениях, влияющих на ваш бизнес в новом налоговом году",
+      article1Desc:
+        "Узнайте о ключевых изменениях, влияющих на ваш бизнес в новом налоговом году",
       article1Content:
         "Изменения, внесенные в Налоговый кодекс Республики Узбекистан, вступили в силу с 1 января 2024 года. Эти изменения направлены на снижение налоговой нагрузки для малого и среднего бизнеса, развитие цифровой экономики и обеспечение соответствия международным стандартам.",
       article2Title: "Налоговые льготы для малого бизнеса",
-      article2Desc: "Откройте для себя налоговые льготы для стартапов и малых предприятий",
+      article2Desc:
+        "Откройте для себя налоговые льготы для стартапов и малых предприятий",
       article2Content:
         "Для субъектов малого бизнеса введены специальные налоговые режимы. Предприниматели с годовым доходом до 1 миллиарда сумов имеют право на упрощенную систему налогообложения. Этот режим упрощает финансовую отчетность и значительно снижает налоговую нагрузку.",
       article3Title: "Цифровая налоговая декларация",
-      article3Desc: "Преимущества системы онлайн-декларирования и как ею пользоваться",
+      article3Desc:
+        "Преимущества системы онлайн-декларирования и как ею пользоваться",
       article3Content:
         "Новая цифровая платформа, разработанная Налоговым комитетом, позволяет налогоплательщикам подавать декларации онлайн, производить платежи и взаимодействовать с налоговыми органами. Система работает 24/7 и доступна через мобильные приложения.",
       article4Title: "Возврат НДС по экспортным операциям",
-      article4Desc: "Обновлен механизм возврата НДС для экспортирующих компаний",
+      article4Desc:
+        "Обновлен механизм возврата НДС для экспортирующих компаний",
       article4Content:
         "Процедура возврата НДС для экспортеров упрощена и ускорена. Теперь на основе электронных документов возврат осуществляется в течение 30 дней.",
       article5Title: "Новые льготы для IT-компаний",
-      article5Desc: "Специальные налоговые режимы для компаний-разработчиков программного обеспечения",
+      article5Desc:
+        "Специальные налоговые режимы для компаний-разработчиков программного обеспечения",
       article5Content:
         "Для компаний IT-сферы ставка налога на прибыль снижена до 5%. Кроме того, социальный налог с фонда оплаты труда сотрудников также применяется по льготным ставкам.",
       article6Title: "Налоговая политика для инвестиционных проектов",
-      article6Desc: "Льготы для компаний, реализующих крупные инвестиционные проекты",
+      article6Desc:
+        "Льготы для компаний, реализующих крупные инвестиционные проекты",
       article6Content:
         "Компании, инвестирующие от 5 миллионов долларов и более, могут воспользоваться 5-летними налоговыми каникулами. Эти меры направлены на улучшение инвестиционного климата.",
     },
@@ -307,17 +335,20 @@ export const translations = {
         "После многих лет работы с различными налоговыми службами я наконец нашел надежного партнера. Настоятельно рекомендую!",
       review2Author: "Дильноза Рахимова",
       review2Position: "Финансовый директор, Uzbek Retail Group",
-      review3: "Их быстрый отклик и глубокие знания бесценны для нашей компании. Всегда готовы помочь.",
+      review3:
+        "Их быстрый отклик и глубокие знания бесценны для нашей компании. Всегда готовы помочь.",
       review3Author: "Сардор Алиев",
       review3Position: "Основатель, Green Energy Startup",
-      review4: "Работа с Soliq.uz упростила наши бизнес-процессы. Они дают четкие ответы на любые сложные вопросы.",
+      review4:
+        "Работа с Soliq.uz упростила наши бизнес-процессы. Они дают четкие ответы на любые сложные вопросы.",
       review4Author: "Малика Турсунова",
       review4Position: "Главный бухгалтер, Silk Road Logistics",
       review5:
         "Профессиональная команда, качественный сервис и своевременная доставка - основные преимущества Soliq.uz. Сотрудничаем уже 3 года.",
       review5Author: "Равшан Абдуллаев",
       review5Position: "Директор, Digital Marketing Agency",
-      review6: "Как стартапу нам нужен был особый подход. Команда Soliq.uz помогла нам правильно использовать льготы.",
+      review6:
+        "Как стартапу нам нужен был особый подход. Команда Soliq.uz помогла нам правильно использовать льготы.",
       review6Author: "Нодира Исмоилова",
       review6Position: "Сооснователь, EdTech Platform",
     },
@@ -330,7 +361,8 @@ export const translations = {
       message: "Ваше сообщение",
       send: "Отправить",
       address: "Адрес",
-      addressValue: "Чиланзарский район, 17 квартал, дом 39, квартира 18, Ташкент, Узбекистан 100131",
+      addressValue:
+        "Чиланзарский район, 17 квартал, дом 39, квартира 18, Ташкент, Узбекистан 100131",
       addressShort: "Чиланзар 17квартал 39дом 18квартира",
       city: "Ташкент, Узбекистан 100131",
       phone2: "Телефон",
@@ -395,11 +427,13 @@ export const translations = {
       title: "Почему выбирают нас",
       subtitle: "Наши конкурентные преимущества",
       reason1Title: "Опытные специалисты",
-      reason1Desc: "Команда профессиональных налоговых консультантов с опытом более 10 лет",
+      reason1Desc:
+        "Команда профессиональных налоговых консультантов с опытом более 10 лет",
       reason2Title: "Поддержка 24/7",
       reason2Desc: "Помощь с вашими вопросами и проблемами в любое время",
       reason3Title: "Цифровые решения",
-      reason3Desc: "Обслуживание через современные технологии и онлайн-платформы",
+      reason3Desc:
+        "Обслуживание через современные технологии и онлайн-платформы",
       reason4Title: "Прозрачность",
       reason4Desc: "Все процессы полностью прозрачны и понятны",
       reason5Title: "Индивидуальный подход",
@@ -426,12 +460,18 @@ export const translations = {
     hero: {
       title: "Professional tax services",
       subtitle: "Leading tax consulting company in Uzbekistan",
-      description: "We provide comprehensive tax accounting, consulting, and legal support services for your business.",
+      description:
+        "We provide comprehensive tax accounting, consulting, and legal support services for your business.",
       cta: "Get Consultation",
       learnMore: "Learn More",
     },
     services: {
       title: "Our Services",
+      serv1: "Soliq maslahati",
+      serv2: "Buxgalteriya xizmatlari",
+      serv3: "Soliq organlari",
+      serv4: "Soliq auditi va Likvidatsiya",
+      serv5: "Bankrotlik",
       subtitle: "Comprehensive tax solutions",
       taxConsulting: "Tax Consulting",
       taxConsultingDesc: "Professional tax planning and compliance advisory",
@@ -476,11 +516,13 @@ export const translations = {
       chosen_news: "Handpicked For You",
       allNews: "All News",
       article1Title: "Tax Legislation Changes 2024",
-      article1Desc: "Learn about key changes affecting your business in the new tax year",
+      article1Desc:
+        "Learn about key changes affecting your business in the new tax year",
       article1Content:
         "Amendments to the Tax Code of the Republic of Uzbekistan came into force on January 1, 2024. These changes aim to reduce the tax burden for small and medium-sized businesses, develop the digital economy, and ensure compliance with international standards.",
       article2Title: "Tax Benefits for Small Business",
-      article2Desc: "Discover available tax incentives for startups and small enterprises",
+      article2Desc:
+        "Discover available tax incentives for startups and small enterprises",
       article2Content:
         "Special tax regimes have been introduced for small business entities. Entrepreneurs with annual income up to 1 billion soums are eligible for a simplified taxation system. This regime simplifies financial reporting and significantly reduces the tax burden.",
       article3Title: "Digital Tax Declaration",
@@ -496,7 +538,8 @@ export const translations = {
       article5Content:
         "For IT sector companies, the income tax rate has been reduced to 5%. In addition, the social tax on employee payroll is also applied at preferential rates.",
       article6Title: "Tax Policy for Investment Projects",
-      article6Desc: "Benefits for companies implementing large investment projects",
+      article6Desc:
+        "Benefits for companies implementing large investment projects",
       article6Content:
         "Companies investing $5 million or more can benefit from a 5-year tax holiday. These measures are aimed at improving the investment climate.",
     },
@@ -511,7 +554,8 @@ export const translations = {
         "After years of working with various tax services, I finally found a reliable partner. Highly recommend!",
       review2Author: "Dilnoza Rahimova",
       review2Position: "CFO, Uzbek Retail Group",
-      review3: "Their quick response and deep knowledge are invaluable to our company. Always ready to help.",
+      review3:
+        "Their quick response and deep knowledge are invaluable to our company. Always ready to help.",
       review3Author: "Sardor Aliyev",
       review3Position: "Founder, Green Energy Startup",
       review4:
@@ -522,7 +566,8 @@ export const translations = {
         "Professional team, quality service, and timely delivery - the main advantages of Soliq.uz. We have been cooperating for 3 years.",
       review5Author: "Ravshan Abdullayev",
       review5Position: "Director, Digital Marketing Agency",
-      review6: "As a startup, we needed a special approach. The Soliq.uz team helped us properly utilize the benefits.",
+      review6:
+        "As a startup, we needed a special approach. The Soliq.uz team helped us properly utilize the benefits.",
       review6Author: "Nodira Ismoilova",
       review6Position: "Co-founder, EdTech Platform",
     },
@@ -535,7 +580,8 @@ export const translations = {
       message: "Your Message",
       send: "Send",
       address: "Address",
-      addressValue: "Chilonzor district, 17 kvartal, building 39, apartment 18, Tashkent, Uzbekistan 100131",
+      addressValue:
+        "Chilonzor district, 17 kvartal, building 39, apartment 18, Tashkent, Uzbekistan 100131",
       addressShort: "Chilonzor 17kvartal 39dom 18kvartira",
       city: "Tashkent, Uzbekistan 100131",
       phone2: "Phone",
@@ -600,13 +646,15 @@ export const translations = {
       title: "Why Choose Us",
       subtitle: "Our Competitive Advantages",
       reason1Title: "Experienced Specialists",
-      reason1Desc: "Team of professional tax consultants with over 10 years of experience",
+      reason1Desc:
+        "Team of professional tax consultants with over 10 years of experience",
       reason2Title: "24/7 Support",
       reason2Desc: "Help with your questions and issues at any time",
       reason3Title: "Digital Solutions",
       reason3Desc: "Service through modern technologies and online platforms",
       reason4Title: "Transparency",
-      reason4Desc: "All processes are completely transparent and understandable",
+      reason4Desc:
+        "All processes are completely transparent and understandable",
       reason5Title: "Individual Approach",
       reason5Desc: "We develop a special strategy for each client",
       reason6Title: "Legal Compliance",
@@ -617,6 +665,6 @@ export const translations = {
       subtitle: "We collaborate with leading companies in Uzbekistan",
     },
   },
-}
+};
 
-export type TranslationKey = keyof typeof translations.en
+export type TranslationKey = keyof typeof translations.en;

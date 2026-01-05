@@ -21,7 +21,6 @@ import {
 import { useEffect, useState } from "react"
 import Logo from "./logo"
 
-
 export function Navbar() {
   const { language, setLanguage, theme, toggleTheme } = useApp()
   const t = translations[language].nav
@@ -34,9 +33,9 @@ export function Navbar() {
   }, [])
 
   const languages = [
-    { code: "uz", name: "O'zbek", flag: "🇺🇿" },
-    { code: "ru", name: "Русский", flag: "🇷🇺" },
-    { code: "en", name: "English", flag: "🇬🇧" },
+    { code: "uz", name: "O'zbek" },
+    { code: "ru", name: "Русский" },
+    { code: "en", name: "English" },
   ]
 
   return (
@@ -64,7 +63,7 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-10">
             <NavLink href="/" label={t.home} />
             <NavLink href="/about" label={t.about} />
-            {/* <NavLink href="/news" label={t.news} /> */}
+            <NavLink href="/services" label={t.services} />
             <NavLink href="/blogs" label={t.blogs} />
             <NavLink href="/reviews" label={t.reviews} />
             <NavLink href="/contact" label={t.contact} />
@@ -90,7 +89,15 @@ export function Navbar() {
                     : ""
                     }`}
                 >
-                  <span className="mr-2">{lang.flag}</span>
+                  <span className="mr-2">
+                    {lang.code === "uz" ? (
+                      <img src={`/uzb.png`} alt="uzb flag" className="w-5 h-5 rounded-full" />
+                    ) : lang.code === "ru" ? (
+                      <img src={`/rus.png`} alt="russian flag" className="w-5 h-5 rounded-full" />
+                    ) : (
+                      <img src={`/eng.png`} alt="england flag" className="w-5 h-5 rounded-full" />
+                    )}
+                  </span>
                   {lang.name}
                 </DropdownMenuItem>
               ))}
@@ -108,13 +115,6 @@ export function Navbar() {
           </Button>
 
           <div className="hidden sm:flex h-8 w-px bg-border mx-2" />
-
-          {/* CTA */}
-          {/* <Link href="/contact" className="hidden sm:block">
-            <Button className="rounded-full px-8 bg-primary hover:bg-primary/90 text-white font-bold text-sm uppercase tracking-widest shadow-lg shadow-primary/20">
-              {t.getStarted}
-            </Button>
-          </Link> */}
 
           {/* Mobile menu */}
           <Sheet>
@@ -138,18 +138,12 @@ export function Navbar() {
               <div className="flex flex-col gap-6 mt-10">
                 <MobileLink href="/" label={t.home} />
                 <MobileLink href="/about" label={t.about} />
-                {/* <MobileLink href="/news" label={t.news} /> */}
+                <MobileLink href="/services" label={t.services} />
                 <MobileLink href="/blogs" label={t.blogs} />
                 <MobileLink href="/reviews" label={t.reviews} />
                 <MobileLink href="/contact" label={t.contact} />
 
                 <div className="h-px bg-border my-2" />
-
-                {/* <Link href="/contact" className="flex items-center justify-center">
-                  <Button className="w-auto rounded-full py-6 bg-primary hover:bg-primary/90 text-white font-bold text-sm uppercase tracking-widest">
-                    Bog'lanish
-                  </Button>
-                </Link> */}
               </div>
             </SheetContent>
           </Sheet>

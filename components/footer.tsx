@@ -96,23 +96,28 @@ export function Footer() {
             <h3 className="font-bold text-sm uppercase tracking-widest mb-6">{t.footer.services}</h3>
             <ul className="space-y-4">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t.footer.taxConsulting}
+                <a href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {t.services.serv1}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t.footer.accounting}
+                <a href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {t.services.serv2}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t.footer.legal}
+                <a href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {t.services.serv3}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t.footer.audit}
+                <a href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {t.services.serv4}
+                </a>
+              </li>
+              <li>
+                <a href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {t.services.serv5}
                 </a>
               </li>
             </ul>
