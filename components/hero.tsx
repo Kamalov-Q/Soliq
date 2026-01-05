@@ -15,16 +15,16 @@ export function Hero() {
       {/* Background */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/uzbekistan-landscape-professional.jpg"
+          src="/background.png"
           alt="Background"
-          className="w-full h-full object-cover opacity-20 grayscale"
+          className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/50 to-background" />
       </div>
 
       {/* Content */}
       <div className="text-center max-w-4xl">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-6">
+        <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-7xl font-bold mb-6">
           {t.title} <br />
           <span className="text-primary italic">{t.subtitle}</span>
         </h1>

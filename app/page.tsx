@@ -3,17 +3,13 @@
 import { Navbar } from "../components/navbar"
 import { Hero } from "../components/hero"
 import { Services } from "../components/services"
-import { NewsSection } from "../components/news-section"
 import { ReviewsCarousel } from "../components/reviews-carousel"
 import { Footer } from "../components/footer"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
 import { motion } from "framer-motion"
 import {
-  TrendingUp,
-  Users,
   Award,
-  Briefcase,
   CheckCircle2,
   Shield,
   Target,
@@ -21,6 +17,7 @@ import {
   Zap,
 } from "lucide-react"
 import { StatsSection } from "@/components/stats-section"
+import NewsComponent from "@/components/news"
 
 export default function SoliqPage() {
   const { language } = useApp()
@@ -33,15 +30,6 @@ export default function SoliqPage() {
     { icon: <Shield size={28} />, title: t.whyUs.reason4Title, desc: t.whyUs.reason4Desc, color: "bg-orange-500/10 text-orange-500" },
     { icon: <Target size={28} />, title: t.whyUs.reason5Title, desc: t.whyUs.reason5Desc, color: "bg-pink-500/10 text-pink-500" },
     { icon: <CheckCircle2 size={28} />, title: t.whyUs.reason6Title, desc: t.whyUs.reason6Desc, color: "bg-cyan-500/10 text-cyan-500" },
-  ]
-
-  const partners = [
-    { name: "Uzcard", logo: "/uzcard-logo.jpg" },
-    { name: "Humo", logo: "/humo-payment-logo.jpg" },
-    { name: "Payme", logo: "/payme-logo.jpg" },
-    { name: "Click", logo: "/click-payment-logo.jpg" },
-    { name: "Uzum", logo: "/uzum-logo.jpg" },
-    { name: "MyTaxi", logo: "/mytaxi-uzbekistan-logo.jpg" },
   ]
 
   return (
@@ -135,7 +123,7 @@ export default function SoliqPage() {
         </div>
       </section> */}
 
-      <NewsSection />
+      <NewsComponent />
       <Footer />
     </main>
   )

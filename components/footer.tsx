@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
 import { Facebook, Instagram, Linkedin, Send, Mail, Phone, MapPin } from "lucide-react"
+import Logo from "./logo"
 
 export function Footer() {
   const { language } = useApp()
@@ -20,7 +21,8 @@ export function Footer() {
           {/* Brand Column */}
           <div className="space-y-6">
             <Link href="/" className="text-3xl font-bold tracking-tighter text-primary inline-block">
-              TaxOFF<span className="text-foreground/40 font-light ml-1">Partners</span>
+              {/* TaxOFF<span className="text-foreground/40 font-light ml-1">Partners</span> */}
+              <Logo />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">{t.footer.description}</p>
             <div className="flex gap-3">
@@ -120,7 +122,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-sm uppercase tracking-widest mb-6">{t.nav.contact}</h3>
             <ul className="space-y-4">
-              <li className="flex gap-3 items-start text-sm text-muted-foreground">
+              <li className="flex gap-3 items-center text-sm text-muted-foreground">
                 <MapPin size={16} className="mt-1 shrink-0 text-primary" />
                 <span className="leading-relaxed">
                   {t.contact.addressShort}, {t.contact.city}
@@ -133,7 +135,7 @@ export function Footer() {
               </li>
               <li className="flex gap-3 items-center text-sm text-muted-foreground">
                 <Mail size={16} className="shrink-0 text-primary" />
-                <span>{t.contact.emailValue}</span>
+                <span><Link href={`mailto:azimovsaidumar@gmail.com`}>{t.contact.emailValue}</Link></span>
               </li>
             </ul>
           </div>
