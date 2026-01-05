@@ -2,14 +2,15 @@
 import Image from "next/image";
 import { SERVICES, Services } from "../data/services";
 import { useApp } from "@/contexts/app-context";
-import { Footer } from "./footer";
+import { translations } from "@/lib/translations";
 
 export default function ServicesComponent() {
     const { language } = useApp();
+    const t = translations[language].services;
     return (
         <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-10">
-                <h1 className="text-4xl font-bold text-center mb-12">Bizning Xizmatlarimiz</h1>
+                <h1 className="text-4xl font-bold text-center mb-12">{t.title}</h1>
 
                 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
                     {SERVICES.map((service: Services) => (
@@ -40,7 +41,6 @@ export default function ServicesComponent() {
                     ))}
                 </div>
             </div>
-            <Footer />
         </>
     );
 }

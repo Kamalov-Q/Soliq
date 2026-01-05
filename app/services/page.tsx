@@ -1,3 +1,4 @@
+import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import ServicesComponent from "@/components/serv-comp"
 
@@ -6,6 +7,7 @@ const Services = () => {
         <div>
             <Navbar />
             <ServicesComponent />
+            <Footer />
         </div>
     )
 }

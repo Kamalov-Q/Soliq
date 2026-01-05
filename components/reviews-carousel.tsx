@@ -6,20 +6,15 @@ import { motion, AnimatePresence } from "framer-motion"
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Star } from "lucide-react"
 import { Button } from "./ui/button"
+import { REVIEWS } from "@/data/reviews"
 
 export function ReviewsCarousel() {
   const { language } = useApp()
   const t = translations[language].reviews
   const [index, setIndex] = useState(0)
 
-  const reviews = [
-    { text: t.review1, author: t.review1Author, pos: t.review1Position },
-    { text: t.review2, author: t.review2Author, pos: t.review2Position },
-    { text: t.review3, author: t.review3Author, pos: t.review3Position },
-  ]
-
-  const next = () => setIndex((prev) => (prev + 1) % reviews.length)
-  const prev = () => setIndex((prev) => (prev - 1 + reviews.length) % reviews.length)
+  const next = () => setIndex((prev) => (prev + 1) % REVIEWS.length)
+  const prev = () => setIndex((prev) => (prev - 1 + REVIEWS.length) % REVIEWS.length)
 
   useEffect(() => {
     const timer = setInterval(next, 5000)
@@ -43,12 +38,12 @@ export function ReviewsCarousel() {
             ))}
           </div>
           <blockquote className="text-2xl md:text-4xl font-medium leading-relaxed italic mb-10 max-w-4xl mx-auto">
-            "{reviews[index].text}"
+            "{REVIEWS[index].comment}"
           </blockquote>
           <div className="space-y-1">
-            <cite className="not-italic font-bold text-xl block">{reviews[index].author}</cite>
+            <cite className="not-italic font-bold text-xl block">{REVIEWS[index].author}</cite>
             <span className="text-muted-foreground font-medium uppercase tracking-widest text-xs">
-              {reviews[index].pos}
+              {REVIEWS[index].company}
             </span>
           </div>
         </motion.div>
@@ -74,7 +69,7 @@ export function ReviewsCarousel() {
       </div>
 
       <div className="flex justify-center gap-2 mt-12">
-        {reviews.map((_, i) => (
+        {REVIEWS.map((_, i) => (
           <button
             key={i}
             onClick={() => setIndex(i)}

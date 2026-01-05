@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { PlayCircle } from "lucide-react"
 import { BLOGS } from "@/data/blogs"
 import NewsComponent from "@/components/news"
+import { translations } from "@/lib/translations"
 
 const MOBILE_LIMIT = 3
 const DESKTOP_LIMIT = 9
@@ -15,6 +16,7 @@ const SM_BREAKPOINT = 640
 
 export default function BlogPage() {
     const { language } = useApp()
+    const t = translations[language].news;
 
     const [isMobile, setIsMobile] = useState(false)
     const [visibleCount, setVisibleCount] = useState(DESKTOP_LIMIT)
@@ -53,7 +55,7 @@ export default function BlogPage() {
                         transition={{ duration: 0.6 }}
                         className="text-4xl md:text-6xl font-bold mb-6"
                     >
-                        {"Soliq bo'yicha tegishli ma'lumotlar"}
+                        {t.subtitle_blog}
                     </motion.h1>
                 </div>
             </section>
@@ -111,7 +113,7 @@ export default function BlogPage() {
                                 onClick={handleShowMore}
                                 className="px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90"
                             >
-                                Show more
+                                {t.showMore}
                             </button>
                         </div>
                     )}

@@ -1,5 +1,6 @@
 import { useApp } from "@/contexts/app-context"
 import { NEWS } from "@/data/news"
+import { translations } from "@/lib/translations"
 import { motion } from "framer-motion"
 import { useRouter } from "next/navigation"
 
@@ -8,6 +9,7 @@ const NewsComponent = () => {
     const { language } = useApp()
     const suggested = NEWS
     const router = useRouter()
+    const t = translations[language].news;
 
 
     return (
@@ -22,7 +24,7 @@ const NewsComponent = () => {
                         transition={{ duration: 0.6 }}
                         className="text-4xl md:text-5xl font-bold mb-6"
                     >
-                        {"Soliq bo'yicha tegishli yangiliklar"}
+                        {t.subtitle}
                     </motion.h1>
                 </div>
             </section>
