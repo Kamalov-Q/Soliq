@@ -90,7 +90,7 @@ export default function BlogPage() {
                                     transition={{ duration: 0.3 }}
                                     className="bg-card border border-border rounded-3xl overflow-hidden"
                                 >
-                                    <div className="relative aspect-video bg-black">
+                                    <div className="relative aspect-video bg-black h-[500px] w-full">
                                         <video
                                             src={blog.videoUrl}
                                             muted
