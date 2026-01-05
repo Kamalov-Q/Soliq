@@ -34,7 +34,7 @@ export default function AboutPage() {
           >
             <div>
               <h2 className="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4">{t.title}</h2>
-              <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1]">{t.subtitle}</h1>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8">{t.subtitle}</h1>
               <p className="text-xl text-muted-foreground mb-12 leading-relaxed">{t.description}</p>
 
               <div className="grid grid-cols-2 gap-10">

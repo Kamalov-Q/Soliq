@@ -36,7 +36,7 @@ export const translations = {
       description:
         "Soliq sohasida 19 yillik tajribaga ega bo'lib, biz minglab kompaniyalarga soliq majburiyatlarini bajarish va moliyaviy maqsadlariga erishishda yordam berdik.",
       sub_desc: "Bizning asosiy yondashuvimiz",
-      mission: "Bizning missiyamiz",
+      mission: "Bizning maqsadimiz",
       missionText:
         "Biz har bir mijozga individual yondashuv, yuqori sifatli xizmat va professional maslahat berishga intilamiz. Bizning maqsadimiz - biznesingizni rivojlantirishda ishonchli hamkor bo'lish.",
       vision: "Bizning qarashamiz",
