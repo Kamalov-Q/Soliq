@@ -231,7 +231,7 @@ export const translations = {
       about: "О нас",
       services: "Услуги",
       news: "Новости",
-      blogs: "Bloglar",
+      blogs: "Блоги",
       reviews: "Отзывы",
       contact: "Контакты",
       getStarted: "Начать",
