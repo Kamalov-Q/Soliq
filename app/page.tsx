@@ -45,7 +45,7 @@ export default function SoliqPage() {
   ]
 
   return (
-    <main className="min-h-screen pt-[72px]">
+    <main className="min-h-screen pt-[72px] container-lg mx-auto">
       <Navbar />
       <Hero />
 
@@ -108,9 +108,9 @@ export default function SoliqPage() {
       </section>
 
       {/* PARTNERS */}
-      <section className="py-24 px-6 bg-muted/20">
+      {/* <section className="py-24 px-6 bg-muted/20">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-primary font-bold uppercase text-xs text-center mb-12">
+          <h2 className="text-primary font-bold uppercase text-xs md:text-5xl text-center mb-12">
             {t.partners.title}
           </h2>
 
@@ -133,7 +133,7 @@ export default function SoliqPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <NewsSection />
       <Footer />
