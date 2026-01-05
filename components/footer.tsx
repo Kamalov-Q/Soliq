@@ -25,7 +25,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground leading-relaxed">{t.footer.description}</p>
             <div className="flex gap-3">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1Bffkt9siW/?mibextid=wwXIfr"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary hover:text-white flex items-center justify-center transition-all"
               >
                 <Facebook size={18} />
@@ -37,7 +37,7 @@ export function Footer() {
                 <Instagram size={18} />
               </a>
               <a
-                href="#"
+                href="https://www.linkedin.com/in/saidumar-azimov-phd-tax-control-7b583529a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 className="w-10 h-10 rounded-full bg-primary/10 hover:bg-primary hover:text-white flex items-center justify-center transition-all"
               >
                 <Linkedin size={18} />
