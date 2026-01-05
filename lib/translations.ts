@@ -38,7 +38,7 @@ export const translations = {
       sub_desc: "Bizning asosiy yondashuvimiz",
       mission: "Bizning maqsadimiz",
       missionText:
-        "Biz har bir mijozga individual yondashuv, yuqori sifatli xizmat va professional maslahat berishga intilamiz. Bizning maqsadimiz - biznesingizni rivojlantirishda ishonchli hamkor bo'lish.",
+        "Biz har bir mijozga individual yondashuv, yuqori sifatli xizmat va professional soliq maslahatini berishga intilamiz. Bizning maqsadimiz - biznesingizni rivojlantirishda ishonchli hamkor bo'lish.",
       vision: "Bizning qarashamiz",
       visionText:
         "O'zbekistonda eng ilg'or va innovatsion soliq xizmatlari provayderiga aylanish, raqamli texnologiyalar va zamonaviy yondashuvlarni qo'llash orqali mijozlarimizga eng yaxshi tajribani taqdim etish.",
