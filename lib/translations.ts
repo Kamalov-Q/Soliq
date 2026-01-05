@@ -41,7 +41,7 @@ export const translations = {
         "Biz har bir mijozga individual yondashuv, yuqori sifatli xizmat va professional soliq maslahatini berishga intilamiz. Bizning maqsadimiz - biznesingizni rivojlantirishda ishonchli hamkor bo'lish.",
       vision: "Bizning yondashuvimiz",
       visionText:
-        "O'zbekistonda eng ilg'or va innovatsion soliq xizmatlari provayderiga aylanish, raqamli texnologiyalar va zamonaviy yondashuvlarni qo'llash orqali mijozlarimizga eng yaxshi tajribani taqdim etish.",
+        "O'zbekistonda eng ilg'or va innovatsion soliq xizmatlari provayderiga aylanish, raqamli texnologiyalar va zamonaviy yondashuvlarni qo'llash orqali mijozlarimizga eng yaxshi xizmatni taqdim etish.",
       values: "Qadriyatlarimiz",
       value1: "Professionallik",
       value1Desc: "Yuqori malakali mutaxassislar jamoasi",
