@@ -1,3 +1,5 @@
+export type Lang = "uz" | "ru" | "en";
+
 export interface Services {
   id: number;
   title: {
@@ -70,9 +72,9 @@ export const SERVICES: Services[] = [
   {
     id: 3,
     title: {
-      uz: "Soliq maslahati",
-      ru: "Налоговые консультации",
-      en: "Tax Consulting",
+      uz: "Soliq organlari",
+      ru: "Налоговые органы",
+      en: "Tax Authorities",
     },
     serv1: {
       uz: "Soliq organlari, sudlar yoki boshqa nazorat organlarida mijoz manfaatlarini himoya qilish va vakillik qilish.",
@@ -89,9 +91,9 @@ export const SERVICES: Services[] = [
   {
     id: 4,
     title: {
-      uz: "Soliq maslahati",
-      ru: "Налоговые консультации",
-      en: "Tax Consulting",
+      uz: "Soliq auditi va Likvidatsiya",
+      ru: "Налоговый аудит и ликвидация",
+      en: "Tax Audit & Liquidation",
     },
     serv1: {
       uz: "Soliq auditi — soliq maslahatchilari tashkiloti tomonidan xo‘jalik yurituvchi subyekt (yuridik yoki jismoniy shaxs)ning soliq majburiyatlari to‘g‘ri bajarilganligini tekshirishga qaratilgan professional xizmatdir.",
@@ -108,9 +110,9 @@ export const SERVICES: Services[] = [
   {
     id: 5,
     title: {
-      uz: "Soliq maslahati",
-      ru: "Налоговые консультации",
-      en: "Tax Consulting",
+      uz: "Bankrotlik",
+      ru: "Банкротство",
+      en: "Bankruptcy",
     },
     serv1: {
       uz: "Bankrotlik — xo‘jalik yurituvchi subyektning o‘z moliyaviy majburiyatlarini to‘liq yoki qisman bajara olmasligi natijasida sud tomonidan e’tirof etiladigan huquqiy holat bo‘lib, bu jarayonda soliq maslahatchilari tashkilotlari muhim yordamchi va maslahat beruvchi subyekt sifatida ishtirok etadi.",
