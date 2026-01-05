@@ -91,7 +91,7 @@ export default function BlogPage() {
                                     className="bg-card border border-border rounded-3xl overflow-hidden"
                                 >
                                     <div className="relative aspect-video bg-black h-[500px] w-full">
-                                        <video
+                                        <video 
                                             src={blog.videoUrl}
                                             muted
                                             controls
