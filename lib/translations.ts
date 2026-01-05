@@ -34,7 +34,7 @@ export const translations = {
       title: "Biz haqimizda",
       subtitle: "O'zbekistondagi eng ishonchli soliq kompaniyasi",
       description:
-        "Soliq sohasida 19 yillik tajribaga ega bo'lib, biz minglab kompaniyalarga soliq majburiyatlarini bajarish va moliyaviy maqsadlariga erishishda yordam berdik.",
+        "Soliq sohasida 19 yillik tajribaga ega bo'lib, biz ko'plab kompaniyalarga soliq majburiyatlarini bajarish va moliyaviy maqsadlariga erishishda yordam berdik.",
       sub_desc: "Bizning asosiy yondashuvimiz",
       mission: "Bizning maqsadimiz",
       missionText:
