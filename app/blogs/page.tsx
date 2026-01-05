@@ -4,12 +4,11 @@ import { useEffect, useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { useApp } from "@/contexts/app-context"
-import { translations } from "@/lib/translations"
 import { motion, AnimatePresence } from "framer-motion"
 import { PlayCircle } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
 import { useRouter } from "next/navigation"
 import { BLOGS } from "@/data/blogs"
+import { NEWS } from "@/data/news"
 
 const MOBILE_LIMIT = 3
 const DESKTOP_LIMIT = 9
@@ -17,69 +16,11 @@ const SM_BREAKPOINT = 640
 
 export default function BlogPage() {
     const { language } = useApp()
-    const t = translations[language].news
 
     const [isMobile, setIsMobile] = useState(false)
     const [visibleCount, setVisibleCount] = useState(DESKTOP_LIMIT)
 
-    const allArticles = [
-        {
-            id: 1,
-            title: t.article1Title,
-            desc: t.article1Desc,
-            content: t.article1Content,
-            date: "20.03.2024",
-            tag: "Legislation",
-            author: "Aziz Alimov",
-        },
-        {
-            id: 2,
-            title: t.article2Title,
-            desc: t.article2Desc,
-            content: t.article2Content,
-            date: "15.03.2024",
-            tag: "Small Business",
-            author: "Dilnoza Sodiqova",
-        },
-        {
-            id: 3,
-            title: t.article3Title,
-            desc: t.article3Desc,
-            content: t.article3Content,
-            date: "10.03.2024",
-            tag: "Digital",
-            author: "Sardor Karimov",
-        },
-        {
-            id: 4,
-            title: t.article4Title,
-            desc: t.article4Desc,
-            content: t.article4Content,
-            date: "05.03.2024",
-            tag: "Export",
-            author: "Elena Petrova",
-        },
-        {
-            id: 5,
-            title: t.article5Title,
-            desc: t.article5Desc,
-            content: t.article5Content,
-            date: "01.03.2024",
-            tag: "IT Sector",
-            author: "Rustam Turayev",
-        },
-        {
-            id: 6,
-            title: t.article6Title,
-            desc: t.article6Desc,
-            content: t.article6Content,
-            date: "25.02.2024",
-            tag: "Investment",
-            author: "Malika Ismoilova",
-        },
-    ]
-
-    const suggested = allArticles.slice(2)
+    const suggested = NEWS
     const router = useRouter()
 
     // Detect screen size
@@ -124,7 +65,7 @@ export default function BlogPage() {
                     {suggested.map((article, i) => (
                         <motion.div
                             key={i}
-                            onClick={() => router.push(`/blogs/123`)}
+                            onClick={() => router.push(`/blogs/${article?.id}`)}
                             initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
@@ -132,22 +73,15 @@ export default function BlogPage() {
                         >
                             <div className="w-full sm:w-40 h-40 rounded-2xl overflow-hidden shrink-0">
                                 <img
-                                    src={`/uzbekistan-business-news-.jpg?height=200&width=200&query=suggested news ${i}`}
-                                    alt={article.title}
+                                    src={`${article?.image}`}
+                                    alt={article.title[language]}
                                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                             </div>
                             <div className="flex flex-col justify-center">
-                                <Badge
-                                    variant="secondary"
-                                    className="w-fit mb-3 rounded-full text-[10px] uppercase font-bold tracking-widest"
-                                >
-                                    {article.tag}
-                                </Badge>
-                                <h4 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight">
-                                    {article.title}
+                                <h4 className="text-xl font-bold mb-2 line-clamp-4 group-hover:text-primary transition-colors leading-tight">
+                                    {article?.title[language]}
                                 </h4>
-                                <p className="text-muted-foreground text-xs font-medium uppercase tracking-widest">{article.date}</p>
                             </div>
                         </motion.div>
                     ))}
