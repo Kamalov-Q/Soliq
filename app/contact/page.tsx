@@ -142,7 +142,7 @@ ${form.message}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="p-8 rounded-3xl bg-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-2xl hover:shadow-primary/5 group"
+                className="p-8 rounded-3xl bg-card border border-border/50 hover:border-primary/30 transition-all hover:shadow-2xl hover:shadow-primary/5 group cursor-pointer"
               >
                 <div className={`w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center mb-6`}>
                   {item.icon}
