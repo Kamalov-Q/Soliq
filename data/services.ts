@@ -63,7 +63,7 @@ export const SERVICES: Services[] = [
       en: "Managing accounting, preparing and restoring documents.",
     },
     serv2: {
-      uz: "Moliyaviy hisob-kitoblar va soliq hisobotlarni to‘g‘rilash.",
+      uz: "Moliyaviy hisob-kitoblar va soliq hisobotlarni to‘g‘irlash.",
       ru: "Исправление финансовой отчетности и налоговых деклараций.",
       en: "Correction of financial statements and tax reports.",
     },
