@@ -40,7 +40,7 @@ export const REVIEWS: Review[] = [
     rating: 4,
     comment:
       `Professional jamoa, sifatli xizmat va o'z vaqtida topshirish - "TaxOFF Partners”ning asosiy afzalliklari. 3 yildan beri hamkorlik qilamiz.`,
-    author: "Jurat Ximatov",
+    author: "Jurat Xikmatov",
     company: "Director SPARKLIGHTING LLC",
   },
   {
