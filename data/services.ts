@@ -72,9 +72,9 @@ export const SERVICES: Services[] = [
   {
     id: 3,
     title: {
-      uz: "Soliq organlari",
-      ru: "Налоговые органы",
-      en: "Tax Authorities",
+      uz: "Soliq muammolari",
+      ru: "Проблемы с Соликом",
+      en: "Tax Problems",
     },
     serv1: {
       uz: "Soliq organlari, sudlar yoki boshqa nazorat organlarida mijoz manfaatlarini himoya qilish va vakillik qilish.",
