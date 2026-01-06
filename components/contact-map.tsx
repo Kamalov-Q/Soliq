@@ -1,20 +1,22 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { Navigation } from "lucide-react"
+import { Navigation, LocateFixed } from "lucide-react"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
 
-const MAP_COORDS: [number, number] = [41.271631, 69.196723]
+const OFFICE_COORDS: [number, number] = [41.270553, 69.193669]
 
 export function ContactMap() {
   const { language } = useApp()
   const t = translations[language].contact
 
   const mapRef = useRef<HTMLDivElement>(null)
-  const mapInstanceRef = useRef<any>(null)
+  const mapInstance = useRef<any>(null)
+  const placemarkRef = useRef<any>(null)
+  const routeRef = useRef<any>(null)
 
-  const [isMapReady, setIsMapReady] = useState(false)
+  const [ready, setReady] = useState(false)
 
   useEffect(() => {
     const lang =
@@ -24,46 +26,48 @@ export function ContactMap() {
       if (!mapRef.current || !window.ymaps) return
 
       window.ymaps.ready(() => {
+        mapInstance.current?.destroy()
+
         const map = new window.ymaps.Map(mapRef.current!, {
-          center: MAP_COORDS,
-          zoom: 16,
-          controls: ["zoomControl", "fullscreenControl"],
+          center: OFFICE_COORDS,
+          zoom: window.innerWidth < 640 ? 15 : 16,
+          controls: ["zoomControl", "fullscreenControl", "geolocationControl"],
         })
 
-        mapInstanceRef.current = map
+        map.behaviors.disable("scrollZoom")
+
+        mapInstance.current = map
 
         const placemark = new window.ymaps.Placemark(
-          MAP_COORDS,
+          OFFICE_COORDS,
           {
             balloonContentHeader:
               "<strong style='font-size:16px'>SOLIQ.UZ</strong>",
             balloonContentBody: `
-              <div style="padding:6px;font-size:14px">
+              <div style="padding:6px">
                 ${t.addressValue}
               </div>
             `,
-            balloonContentFooter: `
-              <div style="padding:6px">
-                <a
-                  href="https://yandex.uz/maps/?pt=${MAP_COORDS[1]},${MAP_COORDS[0]}&z=16&l=map"
-                  target="_blank"
-                  style="color:#10b981;font-weight:600"
-                >
-                  ${t.getDirections}
-                </a>
-              </div>
-            `,
+            hintContent: t.getDirections,
           },
           {
-            preset: "islands#greenDotIconWithCaption",
+            preset: "islands#greenIcon",
+            draggable: true,
             iconColor: "#10b981",
           }
         )
 
+        placemarkRef.current = placemark
         map.geoObjects.add(placemark)
         placemark.balloon.open()
 
-        setIsMapReady(true) // ✅ triggers re-render
+        // Click map → move marker
+        map.events.add("click", (e: any) => {
+          const coords = e.get("coords")
+          placemark.geometry.setCoordinates(coords)
+        })
+
+        setReady(true)
       })
     }
 
@@ -78,43 +82,76 @@ export function ContactMap() {
     }
 
     return () => {
-      if (mapInstanceRef.current) {
-        mapInstanceRef.current.destroy()
-        mapInstanceRef.current = null
-      }
+      mapInstance.current?.destroy()
+      mapInstance.current = null
     }
   }, [language, t.addressValue, t.getDirections])
 
-  return (
-    <div className="relative w-full h-[500px] rounded-[2.5rem] overflow-hidden border border-border/50 bg-muted/30 shadow-2xl shadow-primary/5">
-      {/* Map */}
-      <div ref={mapRef} className="absolute inset-0 w-full h-full" />
+  // 📍 Build route from user → office
+  const buildRoute = () => {
+    if (!window.ymaps || !mapInstance.current) return
 
-      {/* Loading */} 
-      {!isMapReady && (
-        <div className="absolute inset-0 z-10 flex items-center justify-center bg-muted/80 backdrop-blur-sm">
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
-            <p className="text-sm font-medium text-muted-foreground">
-              Loading map...
-            </p>
-          </div>
+    window.ymaps.geolocation.get({ provider: "browser" }).then((res: any) => {
+      const userCoords = res.geoObjects.position
+
+      routeRef.current && mapInstance.current.geoObjects.remove(routeRef.current)
+
+      window.ymaps.route([userCoords, OFFICE_COORDS]).then((route: any) => {
+        route.options.set({
+          strokeColor: "#10b981",
+          strokeWidth: 5,
+          opacity: 0.9,
+        })
+
+        routeRef.current = route
+        mapInstance.current.geoObjects.add(route)
+        mapInstance.current.setBounds(route.getBounds(), { checkZoomRange: true })
+      })
+    })
+  }
+
+  // 🎯 Center on office
+  const centerOffice = () => {
+    mapInstance.current?.setCenter(OFFICE_COORDS, 16, { duration: 400 })
+    placemarkRef.current?.balloon.open()
+  }
+
+  return (
+    <div className="relative w-full h-[520px] rounded-[2.5rem] overflow-hidden border border-border/50 shadow-2xl">
+      {/* Map */}
+      <div ref={mapRef} className="absolute inset-0" />
+
+      {/* Loading */}
+      {!ready && (
+        <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur">
+          <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
         </div>
       )}
 
+      {/* Controls */}
+      <div className="absolute top-6 right-6 z-20 flex flex-col gap-3">
+        <button
+          onClick={centerOffice}
+          className="flex items-center gap-2 rounded-xl bg-background/90 px-4 py-2 text-sm font-semibold shadow hover:scale-105 transition"
+        >
+          <LocateFixed size={16} />
+          Office
+        </button>
+
+        <button
+          onClick={buildRoute}
+          className="flex items-center gap-2 rounded-xl bg-primary text-white px-4 py-2 text-sm font-semibold shadow hover:scale-105 transition"
+        >
+          <Navigation size={16} />
+          {t.getDirections}
+        </button>
+      </div>
+
       {/* Info card */}
-      <div className="absolute bottom-6 left-6 right-6 z-20 pointer-events-none">
-        <div className="pointer-events-auto max-w-xs rounded-2xl border border-border/50 bg-background/95 backdrop-blur-md p-4 shadow-xl">
-          <div className="mb-2 flex items-center gap-3 text-primary">
-            <Navigation size={18} />
-            <span className="text-xs font-bold uppercase tracking-widest">
-              {t.getDirections}
-            </span>
-          </div>
-          <p className="text-xs font-medium text-muted-foreground">
-            Tashkent, Chilonzor district
-          </p>
-        </div>
+      <div className="absolute bottom-6 left-6 z-20 max-w-xs rounded-2xl bg-background/95 backdrop-blur-md p-4 shadow-xl">
+        <p className="text-xs font-medium text-muted-foreground">
+          📍 Tashkent, Chilonzor district
+        </p>
       </div>
     </div>
   )
