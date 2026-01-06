@@ -9,7 +9,7 @@ export const REVIEWS: Review[] = [
   {
     id: 1,
     rating: 5,
-    comment: `"TaxOFF Partner” jamoasi bizning buxgalteriya jarayonlarimizni sezilarli darajada yaxshiladi. Ularning professional yondashuvi va batafsil e'tibori ajoyib!`,
+    comment: `"TaxOFF Partners” jamoasi bizning buxgalteriya jarayonlarimizni sezilarli darajada yaxshiladi. Ularning professional yondashuvi va batafsil e'tibori ajoyib!`,
     author: "Aziz Miraxmedov",
     company: "Director , BUILDING EQUIPMENT LLC",
   },
@@ -31,7 +31,7 @@ export const REVIEWS: Review[] = [
   {
     id: 4,
     rating: 5,
-    comment: `“TaxOFF Partner” jamoasi bilan ishlash biznes jarayonlarimizni soddalashtirdi. Ular har qanday murakkab savolga aniq javob berishadi.`,
+    comment: `“TaxOFF Partners” jamoasi bilan ishlash biznes jarayonlarimizni soddalashtirdi. Ular har qanday murakkab savolga aniq javob berishadi.`,
     author: "Mehriniso Zafarova",
     company: "Director  MYPROTECH  LLC",
   },
@@ -39,7 +39,7 @@ export const REVIEWS: Review[] = [
     id: 5,
     rating: 4,
     comment:
-      `Professional jamoa, sifatli xizmat va o'z vaqtida topshirish - TaxOFF.uz ning asosiy afzalliklari. 3 yildan beri hamkorlik qilamiz.`,
+      `Professional jamoa, sifatli xizmat va o'z vaqtida topshirish - "TaxOFF Partners”ning asosiy afzalliklari. 3 yildan beri hamkorlik qilamiz.`,
     author: "Jurat Ximatov",
     company: "Director SPARKLIGHTING LLC",
   },
@@ -47,7 +47,7 @@ export const REVIEWS: Review[] = [
     id: 6,
     rating: 4,
     comment:
-      `Startap sifatida bizga maxsus yondashuv kerak edi. TaxOFF.uz jamoasi bizga imtiyozlardan to'g'ri foydalanishga yordam berdi.`,
+      `Startap sifatida bizga maxsus yondashuv kerak edi. "TaxOFF Partners” jamoasi bizga imtiyozlardan to'g'ri foydalanishga yordam berdi.`,
     author: "Aziz Miraxmedov",
     company: "Director PRIMEPARTS MCHJ",
   },
