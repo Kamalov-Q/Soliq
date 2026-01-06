@@ -42,7 +42,7 @@ export default function SoliqPage() {
         <StatsSection t={t} />
       </section>
 
-      <Services />
+      {/* <Services /> */}
 
       {/* WHY US */}
       <section className="py-24 px-6 bg-muted/20">
