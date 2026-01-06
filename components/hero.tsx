@@ -4,40 +4,42 @@ import { Button } from "./ui/button"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
 import { useRouter } from "next/navigation"
-import { FileText, Percent, ShieldCheck } from "lucide-react"
+import { Calculator, Coins, FileText, Percent, ShieldCheck } from "lucide-react"
 
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, EffectFade } from "swiper/modules"
 
 import "swiper/css"
 import "swiper/css/effect-fade"
+import { useTheme } from "next-themes"
 
 const backgroundImages = [
-  "/images/bg1.jpg",
-  "/images/bg2.jpg"
+  "/images/bg.jpg",
+  // "/images/bg2.jpg"
 ]
 
 export function Hero() {
   const { language } = useApp()
   const router = useRouter()
+  const {theme} = useTheme();
   const t = translations[language].hero
 
   // Card translations
   const cards = {
     uz: [
       {
-        title: "QQS va Soliqlar",
-        description: "12% QQS hisob-kitoblari va imtiyozlar",
-        icon: <Percent className="w-10 h-10 text-primary" />
+        title: "Soliq maslahati",
+        description: "Soliqlarni rejalashtirish va optimallashtirish bo'yicha strategiyalar ishlab chiqish",
+        icon: <Coins className="w-10 h-10 text-primary" />
       },
       {
-        title: "Hisobotlar",
-        description: "Oylik va yillik soliq hisobotlari",
-        icon: <FileText className="w-10 h-10 text-primary" />
+        title: "Buxgalteriya xizmatlari",
+        description: "Buxgalteriya xizmatlarini yuritish, hujjatlarni tayyorlash va tiklash",
+        icon: <Calculator className="w-10 h-10 text-primary" />
       },
       {
-        title: "Qonuniy Moslik",
-        description: "O‘zbekiston soliq qonunlariga to‘liq moslashgan",
+        title: "Yuridik yordam",
+        description: "Kompaniyalarga huquqiy yordam berish",
         icon: <ShieldCheck className="w-10 h-10 text-primary" />
       }
     ],
@@ -93,7 +95,7 @@ export function Hero() {
               <img
                 src={src}
                 alt="Tax background"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover opacity-50"
               />
             </SwiperSlide>
           ))}
@@ -106,9 +108,9 @@ export function Hero() {
       <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* LEFT — Text */}
         <div className="text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white lg:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-green-700 lg:text-6xl font-bold leading-tight ml-[-100px] mb-6">
             {t.title} <br />
-            <span className="text-black italic">{t.subtitle}</span>
+            <span className={`${theme === "dark" ? "text-white": "text-black" }  italic`}>{t.subtitle}</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10">
@@ -136,7 +138,7 @@ export function Hero() {
         </div>
 
         {/* RIGHT — Tax visuals */}
-        <div className="relative hidden lg:block">
+        <div className="relative hidden lg:block mt-[300px] ml-10">
           <div className="absolute -top-10 -left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-green-500/20 rounded-full blur-3xl" />
 
@@ -144,7 +146,7 @@ export function Hero() {
             {cards[language].map((card, i) => (
               <div
                 key={i}
-                className={`bg-background/80 backdrop-blur-xl border rounded-2xl p-6 shadow-lg hover:shadow-xl transition ${i === 1 ? "ml-10" : i === 2 ? "ml-20" : ""
+                className={`bg-transparent backdrop-blur-xl border rounded-2xl p-6 shadow-lg hover:shadow-xl transition ${i === 1 ? "ml-10" : i === 2 ? "ml-20" : ""
                   }`}
               >
                 <div className="flex items-center gap-4">
