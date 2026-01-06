@@ -3,44 +3,162 @@
 import { Button } from "./ui/button"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
+import { FileText, Percent, ShieldCheck } from "lucide-react"
+
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay, EffectFade } from "swiper/modules"
+
+import "swiper/css"
+import "swiper/css/effect-fade"
+
+const backgroundImages = [
+  "/images/bg1.jpg",
+  "/images/bg2.jpg"
+]
 
 export function Hero() {
-  const { language } = useApp();
-  const router = useRouter();
+  const { language } = useApp()
+  const router = useRouter()
   const t = translations[language].hero
 
+  // Card translations
+  const cards = {
+    uz: [
+      {
+        title: "QQS va Soliqlar",
+        description: "12% QQS hisob-kitoblari va imtiyozlar",
+        icon: <Percent className="w-10 h-10 text-primary" />
+      },
+      {
+        title: "Hisobotlar",
+        description: "Oylik va yillik soliq hisobotlari",
+        icon: <FileText className="w-10 h-10 text-primary" />
+      },
+      {
+        title: "Qonuniy Moslik",
+        description: "O‘zbekiston soliq qonunlariga to‘liq moslashgan",
+        icon: <ShieldCheck className="w-10 h-10 text-primary" />
+      }
+    ],
+    ru: [
+      {
+        title: "НДС и Налоги",
+        description: "Точные расчеты 12% НДС и льготы",
+        icon: <Percent className="w-10 h-10 text-primary" />
+      },
+      {
+        title: "Отчеты",
+        description: "Ежемесячные и годовые налоговые отчеты",
+        icon: <FileText className="w-10 h-10 text-primary" />
+      },
+      {
+        title: "Юридическое Соответствие",
+        description: "Полностью соответствует налоговым законам Узбекистана",
+        icon: <ShieldCheck className="w-10 h-10 text-primary" />
+      }
+    ],
+    en: [
+      {
+        title: "VAT & Taxes",
+        description: "Accurate 12% VAT calculations & exemptions",
+        icon: <Percent className="w-10 h-10 text-primary" />
+      },
+      {
+        title: "Reports",
+        description: "Monthly & yearly tax-ready reports",
+        icon: <FileText className="w-10 h-10 text-primary" />
+      },
+      {
+        title: "Legal Compliance",
+        description: "Fully aligned with Uzbekistan tax rules",
+        icon: <ShieldCheck className="w-10 h-10 text-primary" />
+      }
+    ]
+  }
+
   return (
-    <section className="relative min-h-svh flex items-center justify-center overflow-hidden px-6">
-      {/* Background */}
+    <section className="relative min-h-svh flex items-center overflow-hidden px-6">
+      {/* 🔁 Background Swiper */}
       <div className="absolute inset-0 -z-10">
-        <img
-          src="/background.png"
-          alt="Background"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-linear-to-b from-transparent via-background/50 to-background" />
+        <Swiper
+          modules={[Autoplay, EffectFade]}
+          effect="fade"
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          loop
+          className="h-full w-full"
+        >
+          {backgroundImages.map((src, i) => (
+            <SwiperSlide key={i}>
+              <img
+                src={src}
+                alt="Tax background"
+                className="h-full w-full object-cover"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <div className="absolute inset-0 bg-linear-to-b from-black/30 via-background/70 to-background" />
       </div>
 
-      {/* Content */}
-      <div className="text-center max-w-4xl">
-        <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-7xl font-bold mb-6">
-          {t.title} <br />
-          <span className="text-primary italic">{t.subtitle}</span>
-        </h1>
+      {/* 🧱 Main content */}
+      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* LEFT — Text */}
+        <div className="text-center lg:text-left">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-white lg:text-6xl font-bold leading-tight mb-6">
+            {t.title} <br />
+            <span className="text-black italic">{t.subtitle}</span>
+          </h1>
 
-        <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
-          {t.description}
-        </p>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10">
+            {t.description}
+          </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="rounded-full px-8 h-12 cursor-pointer" onClick={() => router.push('/contact')}>
-            {t.cta}
-          </Button>
-          <Button size="lg" variant="ghost" className="rounded-full px-8 h-12 cursor-pointer" onClick={() => router.push('/about')}>
-            {t.learnMore}
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <Button
+              size="lg"
+              className="rounded-full px-8 h-12 cursor-pointer"
+              onClick={() => router.push("/contact")}
+            >
+              {t.cta}
+            </Button>
+
+            <Button
+              size="lg"
+              variant="outline"
+              className="rounded-full px-8 h-12 cursor-pointer"
+              onClick={() => router.push("/about")}
+            >
+              {t.learnMore}
+            </Button>
+          </div>
         </div>
+
+        {/* RIGHT — Tax visuals */}
+        <div className="relative hidden lg:block">
+          <div className="absolute -top-10 -left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-72 h-72 bg-green-500/20 rounded-full blur-3xl" />
+
+          <div className="grid gap-6">
+            {cards[language].map((card, i) => (
+              <div
+                key={i}
+                className={`bg-background/80 backdrop-blur-xl border rounded-2xl p-6 shadow-lg hover:shadow-xl transition ${i === 1 ? "ml-10" : i === 2 ? "ml-20" : ""
+                  }`}
+              >
+                <div className="flex items-center gap-4">
+                  {card.icon}
+                  <div>
+                    <h3 className="font-semibold text-lg">{card.title}</h3>
+                    <p className="text-sm text-muted-foreground">{card.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* END visuals */}
       </div>
     </section>
   )
