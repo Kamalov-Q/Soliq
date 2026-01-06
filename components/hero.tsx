@@ -78,7 +78,6 @@ export function Hero() {
 
   return (
     <section className="relative min-h-svh flex items-center overflow-hidden px-6">
-      {/* 🔁 Background Swiper */}
       <div className="absolute inset-0 -z-10">
         <Swiper
           modules={[Autoplay, EffectFade]}
@@ -105,7 +104,7 @@ export function Hero() {
       <div className="mx-auto text-center max-w-7xl flex flex-col items-center justify-center gap-10 mt-60">
         {/* LEFT — Text */}
         <div className="text-center flex flex-col items-center justify-center gap-5 md:ml-40">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-gray-400 lg:text-6xl font-bold leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl text-gray-400 lg:text-5xl font-bold leading-tight mb-6">
             {t.title} <br />
             <span className="dark:text-gray-400 text-gray-400">{t.subtitle}</span>
           </h1>
