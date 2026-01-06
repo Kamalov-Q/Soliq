@@ -24,21 +24,58 @@ export function Hero() {
 
   const cards = {
     uz: [
-      { title: "Soliq maslahati", description: "Soliqlarni rejalashtirish va optimallashtirish bo'yicha strategiyalar ishlab chiqish", icon: <Coins className={`w-10 h-10 dark:text-primary text-white`} /> },
-      { title: "Buxgalteriya xizmatlari", description: "Buxgalteriya xizmatlarini yuritish, hujjatlarni tayyorlash va tiklash", icon: <Calculator className={`w-10 h-10 dark:text-primary text-white`} /> },
-      { title: "Yuridik yordam", description: "Kompaniyalarga huquqiy yordam berish", icon: <ShieldCheck className={`w-10 h-10 dark:text-primary text-white`} /> },
+      {
+        title: "Soliq maslahati",
+        description: "Soliqlarni rejalashtirish va optimallashtirish bo'yicha strategiyalar ishlab chiqish",
+        icon: <Coins className={`w-10 h-10 dark:text-primary text-white`} />
+      },
+      {
+        title: "Buxgalteriya xizmatlari",
+        description: "Buxgalteriya xizmatlarini yuritish, hujjatlarni tayyorlash va tiklash",
+        icon: <Calculator className={`w-10 h-10 dark:text-primary text-white`} />
+      },
+      {
+        title: "Yuridik yordam",
+        description: "Kompaniyalarga huquqiy yordam berish",
+        icon: <ShieldCheck className={`w-10 h-10 dark:text-primary text-white`} />
+      }
     ],
     ru: [
-      { title: "НДС и Налоги", description: "Точные расчеты 12% НДС и льготы", icon: <Percent className={`w-10 h-10 dark:text-primary text-white`} /> },
-      { title: "Отчеты", description: "Ежемесячные и годовые налоговые отчеты", icon: <FileText className={`w-10 h-10 dark:text-primary text-white`} /> },
-      { title: "Юридическое Соответствие", description: "Полностью соответствует налоговым законам Узбекистана", icon: <ShieldCheck className={`w-10 h-10 dark:text-primary text-white`} /> },
+      {
+        title: "Налоговые консультации",
+        description: "Разработка стратегий по планированию и оптимизации налогов",
+        icon: <Coins className={`w-10 h-10 dark:text-primary text-white`} />
+      },
+      {
+        title: "Бухгалтерские услуги",
+        description: "Ведение бухгалтерии, подготовка и восстановление документов",
+        icon: <Calculator className={`w-10 h-10 dark:text-primary text-white`} />
+      },
+      {
+        title: "Юридическая помощь",
+        description: "Предоставление юридической помощи компаниям",
+        icon: <ShieldCheck className={`w-10 h-10 dark:text-primary text-white`} />
+      }
     ],
     en: [
-      { title: "VAT & Taxes", description: "Accurate 12% VAT calculations & exemptions", icon: <Percent className={`w-10 h-10 dark:text-primary text-white`} /> },
-      { title: "Reports", description: "Monthly & yearly tax-ready reports", icon: <FileText className={`w-10 h-10 dark:text-primary text-white`} /> },
-      { title: "Legal Compliance", description: "Fully aligned with Uzbekistan tax rules", icon: <ShieldCheck className={`w-10 h-10 dark:text-primary text-white`} /> },
+      {
+        title: "Tax Consulting",
+        description: "Developing strategies for tax planning and optimization",
+        icon: <Coins className={`w-10 h-10 dark:text-primary text-white`} />
+      },
+      {
+        title: "Accounting Services",
+        description: "Managing accounting, preparing and restoring documents",
+        icon: <Calculator className={`w-10 h-10 dark:text-primary text-white`} />
+      },
+      {
+        title: "Legal Assistance",
+        description: "Providing legal support for companies",
+        icon: <ShieldCheck className={`w-10 h-10 dark:text-primary text-white`} />
+      }
     ]
   }
+
 
   return (
     <section className="relative min-h-svh flex items-center overflow-hidden px-6">
