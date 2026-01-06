@@ -58,7 +58,6 @@ export function Navbar() {
           >
             {/* TaxOFF <span className="text-foreground/40 font-light">Partners</span> */}
             <Logo />
-            {/* <img src={`/images/logo.jpg`} className="w-14 h-14 rounded-full" alt="" style={{mixBlendMode: "multiply"}} /> */}
           </Link>
 
           <div className="hidden lg:flex items-center gap-10">
