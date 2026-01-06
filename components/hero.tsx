@@ -76,7 +76,6 @@ export function Hero() {
     ]
   }
 
-
   return (
     <section className="relative min-h-svh flex items-center overflow-hidden px-6">
       {/* 🔁 Background Swiper */}
@@ -103,20 +102,16 @@ export function Hero() {
       </div>
 
       {/* 🧱 Main content */}
-      <div className="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="mx-auto text-center max-w-7xl flex flex-col items-center justify-center gap-10 mt-60">
         {/* LEFT — Text */}
-        <div className="text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl text-green-700 lg:text-6xl font-bold leading-tight mb-6">
+        <div className="text-center flex flex-col items-center justify-center gap-5 md:ml-40">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-gray-400 lg:text-6xl font-bold leading-tight mb-6">
             {t.title} <br />
-            <span className="dark:text-white text-black italic">{t.subtitle}</span>
+            <span className="dark:text-gray-400 text-gray-400">{t.subtitle}</span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-10">
-            {t.description}
-          </p>
-
           {/* Desktop buttons */}
-          <div className="hidden lg:flex gap-4 justify-start">
+          <div className="flex gap-4 flex-col md:flex-row justify-start">
             <Button
               size="lg"
               className="rounded-full px-8 h-12 cursor-pointer"
@@ -136,71 +131,6 @@ export function Hero() {
           </div>
         </div>
 
-        {/* RIGHT — Tax visuals */}
-        <div className="relative">
-          {/* Desktop visuals */}
-          <div className="hidden lg:block">
-            <div className="absolute -top-10 -left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 right-0 w-72 h-72 bg-green-500/20 rounded-full blur-3xl" />
-
-            <div className="grid gap-6 mt-10 md:mt-80">
-              {cards[language].map((card, i) => (
-                <div
-                  key={i}
-                  className={`bg-transparent backdrop-blur-xl border rounded-2xl p-6 shadow-lg hover:shadow-xl transition ${i === 1 ? "ml-10" : i === 2 ? "ml-20" : ""}`}
-                >
-                  <div className="flex items-center gap-4">
-                    {card.icon}
-                    <div>
-                      <h3 className="font-semibold text-lg">{card.title}</h3>
-                      <p className="text-sm text-muted-foreground">{card.description}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile visuals + buttons */}
-          <div className="lg:hidden mt-10 flex flex-col gap-4">
-            {cards[language].map((card, i) => (
-              <div
-                key={i}
-                className="bg-transparent backdrop-blur-xl border rounded-2xl p-4 shadow-lg hover:shadow-xl transition"
-              >
-                <div className="flex items-center gap-3">
-                  {card.icon}
-                  <div>
-                    <h3 className="font-semibold text-base">{card.title}</h3>
-                    <p className="text-sm text-muted-foreground">{card.description}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            {/* Mobile buttons below cards */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-6">
-              <Button
-                size="lg"
-                className="rounded-full px-8 h-12 cursor-pointer"
-                onClick={() => router.push("/contact")}
-              >
-                {t.cta}
-              </Button>
-
-              <Button
-                size="lg"
-                variant="outline"
-                className="rounded-full px-8 h-12 cursor-pointer"
-                onClick={() => router.push("/about")}
-              >
-                {t.learnMore}
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {/* END visuals */}
       </div>
     </section>
   )
