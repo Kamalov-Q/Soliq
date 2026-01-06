@@ -73,7 +73,7 @@ export const SERVICES: Services[] = [
     id: 3,
     title: {
       uz: "Soliq muammolari",
-      ru: "Проблемы с Соликом",
+      ru: "Налоговые проблемы",
       en: "Tax Problems",
     },
     serv1: {
