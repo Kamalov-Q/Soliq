@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { Navigation, LocateFixed } from "lucide-react"
 import { useApp } from "../contexts/app-context"
 import { translations } from "../lib/translations"
+import Link from "next/link"
 
 const OFFICE_COORDS: [number, number] = [41.270553, 69.193669]
 
@@ -139,11 +140,13 @@ export function ContactMap() {
         </button>
 
         <button
-          onClick={buildRoute}
           className="flex items-center gap-2 rounded-xl bg-primary text-white px-4 py-2 text-sm font-semibold shadow hover:scale-105 transition"
         >
-          <Navigation size={16} />
-          {t.getDirections}
+          <Link href={`https://yandex.uz/maps/-/CLXfbL2s`} className="flex items-center justify-center gap-5">
+
+            <Navigation size={16} />
+            {t.getDirections}
+          </Link>
         </button>
       </div>
 

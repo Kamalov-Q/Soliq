@@ -6,9 +6,9 @@ import { Footer } from "@/components/footer"
 import { useApp } from "@/contexts/app-context"
 import { motion, AnimatePresence } from "framer-motion"
 import { PlayCircle } from "lucide-react"
-import { BLOGS } from "@/data/blogs"
 import NewsComponent from "@/components/news"
 import { translations } from "@/lib/translations"
+import { BLOGS } from "@/data/blogs"
 
 const MOBILE_LIMIT = 3
 const DESKTOP_LIMIT = 9
@@ -34,7 +34,7 @@ export default function BlogPage() {
         return () => window.removeEventListener("resize", check)
     }, [])
 
-    const visibleBlogs = BLOGS.slice(0, visibleCount)
+    const visibleBlogs = BLOGS.reverse().slice(0, visibleCount)
 
     const handleShowMore = () => {
         setVisibleCount((prev) => prev + (isMobile ? MOBILE_LIMIT : DESKTOP_LIMIT))

@@ -130,7 +130,7 @@ export function Footer() {
               <li className="flex gap-3 items-center text-sm text-muted-foreground">
                 <MapPin size={16} className="mt-1 shrink-0 text-primary" />
                 <span className="leading-relaxed">
-                  {t.contact.addressShort}, {t.contact.city}
+                  <Link href={`https://yandex.uz/maps/-/CLXfbL2s`}>{t.contact.addressShort}, {t.contact.city}</Link>
                 </span>
               </li>
               <li className="flex gap-3 items-center text-sm text-muted-foreground">
