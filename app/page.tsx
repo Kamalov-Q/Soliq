@@ -102,7 +102,7 @@ export default function SoliqPage() {
 
       <BlogComponent />
 
-      <ServicesComponent />
+      <ServicesComponent p={2} />
 
       <Footer />
     </main>

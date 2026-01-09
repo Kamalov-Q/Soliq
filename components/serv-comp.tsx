@@ -4,12 +4,12 @@ import { SERVICES, Services } from "../data/services";
 import { useApp } from "@/contexts/app-context";
 import { translations } from "@/lib/translations";
 
-export default function ServicesComponent() {
+export default function ServicesComponent({ p }: { p?: number }) {
     const { language } = useApp();
     const t = translations[language].services;
     return (
         <>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-${p ? p : '32'} pb-20`}>
                 <h1 className="text-4xl font-bold text-center mb-12">{t.title}</h1>
 
                 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
