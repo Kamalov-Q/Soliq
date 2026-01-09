@@ -34,7 +34,6 @@ export default function BlogPage() {
         return () => window.removeEventListener("resize", check)
     }, [])
 
-    // const visibleBlogs = BLOGS.reverse().slice(0, visibleCount);
     const visibleBlogs = [...BLOGS]
         .reverse()
         .slice(0, visibleCount);
