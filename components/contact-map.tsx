@@ -46,7 +46,7 @@ export function ContactMap() {
               "<strong style='font-size:16px'>TaxOFF Partners</strong>",
             balloonContentBody: `
               <div style="padding:6px">
-                ${t.addressValue}
+                ${t.addressValue} 
               </div>
             `,
             hintContent: t.getDirections,
