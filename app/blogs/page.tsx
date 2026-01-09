@@ -18,7 +18,7 @@ export default function BlogPage() {
     const { language } = useApp()
     const t = translations[language].news;
 
-    const [isMobile, setIsMobile] = useState(false)
+    const [isMobile, setIsMobile] = useState(false);
     const [visibleCount, setVisibleCount] = useState(DESKTOP_LIMIT)
 
     // Detect screen size
@@ -34,7 +34,12 @@ export default function BlogPage() {
         return () => window.removeEventListener("resize", check)
     }, [])
 
-    const visibleBlogs = BLOGS.reverse().slice(0, visibleCount);
+    // const visibleBlogs = BLOGS.reverse().slice(0, visibleCount);
+    const visibleBlogs = [...BLOGS]
+        .reverse()
+        .slice(0, visibleCount);
+
+    console.log(visibleBlogs, 'VIsible blogs from blog page');
 
     const handleShowMore = () => {
         setVisibleCount((prev) => prev + (isMobile ? MOBILE_LIMIT : DESKTOP_LIMIT))
