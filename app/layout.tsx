@@ -13,9 +13,15 @@ const _geistMono = Geist_Mono({ subsets: ["latin", "cyrillic"] })
 
 export const metadata: Metadata = generateSEOMetadata({
   title: "TaxOFF Partners - Professional Tax Services",
-  description: "Leading tax consulting and accounting services in Uzbekistan. Soliq maslahati, soliq maslahat yordami, soliq konsaltingi, buxgalteriya xizmatlari. Налоговые консультации, налоговый консалтинг. Tax consulting, tax advice, accounting services.",
+  description: "Soliq xizmatlari - O'zbekistondagi yetakchi soliq maslahati va buxgalteriya xizmatlari. Soliq maslahati, soliq maslahat yordami, soliq konsaltingi, buxgalteriya xizmatlari Toshkent. Налоговые услуги, налоговые консультации в Узбекистане. Tax services, tax consulting, accounting services in Uzbekistan.",
   path: "/",
   image: "/logo.png",
+  keywords: [
+    "Soliq xizmatlari",
+    "Soliq maslahati",
+    "Soliq maslahat yordami",
+    "Toshkent soliq xizmatlari",
+  ],
 })
 
 export default function RootLayout({
