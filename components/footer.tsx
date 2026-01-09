@@ -20,9 +20,9 @@ export function Footer() {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="/" className="text-3xl font-bold tracking-tighter text-primary inline-block">
+            <Link href="/" className="text-3xl flex items-center font-bold tracking-tighter text-primary">
               {/* TaxOFF<span className="text-foreground/40 font-light ml-1">Partners</span> */}
-              <Logo />
+              <Logo w={60} h={40}/>
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed">{t.footer.description}</p>
             <div className="flex gap-3">
