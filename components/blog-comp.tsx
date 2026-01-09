@@ -1,10 +1,10 @@
 "use client"
 import { useApp } from "@/contexts/app-context"
 import { motion, AnimatePresence } from "framer-motion"
-import { PlayCircle } from "lucide-react"
+import { ChevronRight, PlayCircle } from "lucide-react"
 import { translations } from "@/lib/translations"
 import { BLOGS } from "@/data/blogs"
-import { useRouter } from "next/router"
+import { useRouter } from "next/navigation"
 
 export default function BlogComponent() {
     const { language } = useApp()
@@ -50,7 +50,7 @@ export default function BlogComponent() {
                                     exit={{ opacity: 0, y: 10 }}
                                     transition={{ duration: 0.3 }}
                                     onClick={() => router.push(`/blogs`)}
-                                    className="bg-card border border-border rounded-3xl overflow-hidden"
+                                    className="bg-card border border-border rounded-3xl overflow-hidden cursor-pointer"
                                 >
                                     <div className="relative aspect-video bg-black h-[500px] w-full">
                                         <video
@@ -74,6 +74,14 @@ export default function BlogComponent() {
                                 </motion.article>
                             ))}
                         </AnimatePresence>
+                        <div className="mt-12 flex justify-center items-center ml-[670px]">
+                            <button
+                                onClick={() => router.push(`/blogs`)}
+                                className="px-6 py-3 text-nowrap rounded-full bg-primary text-primary-foreground cursor-pointer font-medium hover:opacity-90"
+                            >
+                                {t.readMore}
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
