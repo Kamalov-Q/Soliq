@@ -1,16 +1,17 @@
 "use client"
 import { useApp } from "@/contexts/app-context"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronRight, PlayCircle } from "lucide-react"
+import { PlayCircle } from "lucide-react"
 import { translations } from "@/lib/translations"
 import { BLOGS } from "@/data/blogs"
 import { useRouter } from "next/navigation"
 
 export default function BlogComponent() {
-    const { language } = useApp()
+    const { language } = useApp();
     const t = translations[language].news;
-    const router = useRouter()
-    const visibleBlogs = BLOGS.reverse().slice(36)
+    const router = useRouter();
+    const visibleBlogs = BLOGS.slice(36).reverse();
+    console.log(visibleBlogs, 'Visible blogs');
 
     return (
         <main className="pt-[72px] min-h-screen">
