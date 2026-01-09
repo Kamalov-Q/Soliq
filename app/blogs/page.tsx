@@ -111,7 +111,7 @@ export default function BlogPage() {
                         <div className="mt-12 flex justify-center">
                             <button
                                 onClick={handleShowMore}
-                                className="px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90"
+                                className="px-6 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:opacity-90 cursor-pointer"
                             >
                                 {t.showMore}
                             </button>
