@@ -19,6 +19,7 @@ import {
 import { StatsSection } from "@/components/stats-section"
 import NewsComponent from "@/components/news"
 import ServicesComponent from "@/components/serv-comp"
+import BlogComponent from "@/components/blog-comp"
 
 export default function SoliqPage() {
   const { language } = useApp()
@@ -98,6 +99,8 @@ export default function SoliqPage() {
 
 
       <NewsComponent />
+
+      <BlogComponent />
 
       <ServicesComponent />
 

@@ -68,8 +68,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/news" className="text-muted-foreground hover:text-primary transition-colors text-sm">
-                  {t.nav.news}
+                <Link href="/services" className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                  {t.nav.services}
                 </Link>
               </li>
               <li>
