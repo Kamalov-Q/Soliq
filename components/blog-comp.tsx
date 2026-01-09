@@ -23,7 +23,7 @@ export default function BlogComponent() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-6xl font-bold mb-6"
+                        className="text-4xl md:text-5xl font-bold mb-6"
                     >
                         {t.subtitle_blog}
                     </motion.h1>
@@ -50,7 +50,6 @@ export default function BlogComponent() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 10 }}
                                     transition={{ duration: 0.3 }}
-                                    onClick={() => router.push(`/blogs`)}
                                     className="bg-card border border-border rounded-3xl overflow-hidden cursor-pointer"
                                 >
                                     <div className="relative aspect-video bg-black h-[500px] w-full">
@@ -75,7 +74,7 @@ export default function BlogComponent() {
                                 </motion.article>
                             ))}
                         </AnimatePresence>
-                        <div className="mt-12 flex justify-center items-center ml-[670px]">
+                        <div className="mt-2 flex justify-center items-center ml-[630px]">
                             <button
                                 onClick={() => router.push(`/blogs`)}
                                 className="px-6 py-3 text-nowrap rounded-full bg-primary text-primary-foreground cursor-pointer font-medium hover:opacity-90"

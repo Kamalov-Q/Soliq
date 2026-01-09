@@ -34,7 +34,7 @@ export default function BlogPage() {
         return () => window.removeEventListener("resize", check)
     }, [])
 
-    const visibleBlogs = BLOGS.reverse().slice(0, visibleCount)
+    const visibleBlogs = BLOGS.reverse().slice(0, visibleCount);
 
     const handleShowMore = () => {
         setVisibleCount((prev) => prev + (isMobile ? MOBILE_LIMIT : DESKTOP_LIMIT))
@@ -53,7 +53,7 @@ export default function BlogPage() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="text-4xl md:text-6xl font-bold mb-6"
+                        className="text-4xl md:text-5xl font-bold mb-6"
                     >
                         {t.subtitle_blog}
                     </motion.h1>
