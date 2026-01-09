@@ -43,7 +43,7 @@ export function ContactMap() {
           OFFICE_COORDS,
           {
             balloonContentHeader:
-              "<strong style='font-size:16px'>SOLIQ.UZ</strong>",
+              "<strong style='font-size:16px'>TaxOFF Partners</strong>",
             balloonContentBody: `
               <div style="padding:6px">
                 ${t.addressValue}

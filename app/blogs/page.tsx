@@ -38,8 +38,6 @@ export default function BlogPage() {
         .reverse()
         .slice(0, visibleCount);
 
-    console.log(visibleBlogs, 'VIsible blogs from blog page');
-
     const handleShowMore = () => {
         setVisibleCount((prev) => prev + (isMobile ? MOBILE_LIMIT : DESKTOP_LIMIT))
     }

@@ -5,32 +5,18 @@ import { Analytics } from "@vercel/analytics/next"
 import { AppProvider } from "@/contexts/app-context"
 import "./globals.css"
 import { FloatingActions } from "@/components/FloatingActions"
+import { StructuredData } from "@/components/structured-data"
+import { generateSEOMetadata } from "@/lib/seo"
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _geist = Geist({ subsets: ["latin", "cyrillic"] })
+const _geistMono = Geist_Mono({ subsets: ["latin", "cyrillic"] })
 
-export const metadata: Metadata = {
-  title: "Soliq.uz - Professional Tax Services",
-  description: "Leading tax consulting and accounting services in Uzbekistan",
-  generator: "v0.app",
-  icons: { 
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
-}
+export const metadata: Metadata = generateSEOMetadata({
+  title: "TaxOFF Partners - Professional Tax Services",
+  description: "Leading tax consulting and accounting services in Uzbekistan. Soliq maslahati, soliq maslahat yordami, soliq konsaltingi, buxgalteriya xizmatlari. Налоговые консультации, налоговый консалтинг. Tax consulting, tax advice, accounting services.",
+  path: "/",
+  image: "/logo.png",
+})
 
 export default function RootLayout({
   children,
@@ -38,8 +24,9 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="uz" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
+        <StructuredData />
         <AppProvider>
           {children}
           <FloatingActions />
