@@ -123,7 +123,7 @@ ${form.message}
                     ],
                 }}
                 transition={{ repeat: Infinity, duration: 2 }}
-                className="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer"
+                className="fixed bottom-6 right-6 z-50 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer border border-white"
             >
                 <Phone />
             </motion.button>
@@ -136,7 +136,7 @@ ${form.message}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}
-                        className="fixed bottom-24 right-6 z-40 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg cursor-pointer"
+                        className="fixed bottom-24 right-6 z-40 bg-primary text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg cursor-pointer border border-white"
                     >
                         <ArrowUp />
                     </motion.button>
