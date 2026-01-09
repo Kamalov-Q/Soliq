@@ -4,10 +4,12 @@ import { motion, AnimatePresence } from "framer-motion"
 import { PlayCircle } from "lucide-react"
 import { translations } from "@/lib/translations"
 import { BLOGS } from "@/data/blogs"
+import { useRouter } from "next/router"
 
 export default function BlogComponent() {
     const { language } = useApp()
     const t = translations[language].news;
+    const router = useRouter()
     const visibleBlogs = BLOGS.reverse().slice(36)
 
     return (
@@ -47,6 +49,7 @@ export default function BlogComponent() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 10 }}
                                     transition={{ duration: 0.3 }}
+                                    onClick={() => router.push(`/blogs`)}
                                     className="bg-card border border-border rounded-3xl overflow-hidden"
                                 >
                                     <div className="relative aspect-video bg-black h-[500px] w-full">
