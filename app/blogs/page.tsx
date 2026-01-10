@@ -1,5 +1,5 @@
 "use client"
-
+import axios from 'axios'
 import { useEffect, useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
@@ -8,7 +8,15 @@ import { motion, AnimatePresence } from "framer-motion"
 import { PlayCircle } from "lucide-react"
 import NewsComponent from "@/components/news"
 import { translations } from "@/lib/translations"
-import { BLOGS } from "@/data/blogs"
+import { Blog, BLOGS } from "@/data/blogs"
+
+interface BlogFromBackend {
+    id: string;
+    titleEn: string;
+    titleRu: string;
+    titleUz: string;
+    videoUrl: string;
+}
 
 const MOBILE_LIMIT = 3
 const DESKTOP_LIMIT = 9
@@ -16,10 +24,25 @@ const SM_BREAKPOINT = 640
 
 export default function BlogPage() {
     const { language } = useApp()
+
+    const [blogs, setBlogs] = useState<BlogFromBackend[] | []>([]);
     const t = translations[language].news;
 
     const [isMobile, setIsMobile] = useState(false);
     const [visibleCount, setVisibleCount] = useState(DESKTOP_LIMIT)
+
+    const backLang = language.charAt(0)?.toUpperCase() + language.slice(1)?.toLowerCase();
+    const baseUrl = process.env.NEXT_API_URL;
+
+
+    const getBlogs = async () => {
+        const data = await axios.get<BlogFromBackend>(`https://soliq-backend.onrender.com/blogs`);
+        setBlogs(data.data);
+    }
+
+    useEffect(() => {
+        getBlogs();
+    }, [])
 
     // Detect screen size
     useEffect(() => {
@@ -41,6 +64,11 @@ export default function BlogPage() {
     const handleShowMore = () => {
         setVisibleCount((prev) => prev + (isMobile ? MOBILE_LIMIT : DESKTOP_LIMIT))
     }
+
+    console.log(baseUrl, 'Base Url');
+    console.log(backLang, 'Backend lang');
+    // console.log(blogs[0]?.title, 'Blogs coming')
+    // console.log(`Lang coming from i18: ${language}, ${blogs && blogs[0][`title${backLang}`]}`);
 
     return (
         <main className="pt-[72px] min-h-screen">
@@ -75,7 +103,7 @@ export default function BlogPage() {
             "
                     >
                         <AnimatePresence>
-                            {visibleBlogs.map((blog) => (
+                            {visibleBlogs && Array.from(visibleBlogs)?.map((blog) => (
                                 <motion.article
                                     key={blog.id}
                                     initial={{ opacity: 0, y: 20 }}
@@ -86,7 +114,7 @@ export default function BlogPage() {
                                 >
                                     <div className="relative aspect-video bg-black h-[500px] w-full">
                                         <video
-                                            src={blog.videoUrl}
+                                            src={blog?.videoUrl}
                                             muted
                                             controls
                                             playsInline
@@ -100,7 +128,8 @@ export default function BlogPage() {
 
                                     <div className="p-5">
                                         <h3 className="font-bold">
-                                            {blog.title[language]}
+                                            {/* {blog?.[`title${backLang}`]} */}
+                                            {blog?.title[language]}
                                         </h3>
                                     </div>
                                 </motion.article>
